@@ -8,6 +8,4 @@ public enum Status {
 	REJECTED,
 	DOCUMENTS_NOT_UPLOADED,
 	DOCUMENTS_UPLOADED
-
-
 }
