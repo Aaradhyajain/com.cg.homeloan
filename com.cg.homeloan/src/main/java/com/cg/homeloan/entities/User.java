@@ -10,15 +10,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "all_user")
 public class User {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private int userId;
 	@Column
 	private String password;
 	@Column
 	private String role;
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(int userId, String password, String role) {
+		super();
+		this.userId = userId;
+		this.password = password;
+		this.role = role;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -47,18 +57,6 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", role=" + role + "]";
-	}
-
-	public User(int userId, String password, String role) {
-		super();
-		this.userId = userId;
-		this.password = password;
-		this.role = role;
-	}
-
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 }

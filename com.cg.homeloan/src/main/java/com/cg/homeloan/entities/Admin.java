@@ -12,23 +12,22 @@ import javax.persistence.Table;
 public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private int userId;
 	@Column
 	private String adminName;
 	@Column
 	private String adminContact;
 
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Admin(int userId, String adminName, String adminContact) {
 		super();
 		this.userId = userId;
 		this.adminName = adminName;
 		this.adminContact = adminContact;
-	}
-
-	@Override
-	public String toString() {
-		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
 
 	public int getUserId() {
@@ -55,8 +54,9 @@ public class Admin {
 		this.adminContact = adminContact;
 	}
 
-	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
+
 }

@@ -3,30 +3,55 @@ package com.cg.homeloan.services;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.cg.homeloan.entities.Customer;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
+import com.cg.homeloan.repositories.ICustomerRepository;
 
-
-public class CustomerService  {
+@Service
+public class CustomerService implements ICustomerService {
+	@Autowired
+	ICustomerRepository iCustomerRepository;
+	
+	@Override
 	public Customer addCustomer(Customer customer) {
-		return null;
+		iCustomerRepository.save(customer);
+		return customer;
 	}
-	public Customer updateCustomer(Customer customer) throws CustomerNotFoundException {
-		return null;
+	
+	@Override
+	public Customer getCustomer(int userId) throws CustomerNotFoundException { 
+		return iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
 	}
-	public Customer deleteCustomer(Customer customer) throws CustomerNotFoundException {
-		return null;
+	
+	@Override
+	public List<Customer> getAllCustomers(){
+		return iCustomerRepository.findAll();
 	}
-	public Customer viewCustomer(int custid) throws CustomerNotFoundException {
-		return null;
+	
+	@Override
+	public Customer updateCustomer(int userId,Customer customer) throws CustomerNotFoundException {
+		iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
+		return iCustomerRepository.save(customer);
 	}
-	public List<Customer> viewAllCustomers() {
-		return null;
+	
+	@Override
+	public Customer deleteCustomer(int userId) throws CustomerNotFoundException {
+		Customer customer = getCustomer(userId);//iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
+		
+		iCustomerRepository.deleteById(userId);
+		return customer;	
 	}
-	public List<Customer> viewCustomerList(LocalDate dateOfApplication) {
-		return null;
-	}
+	
+	
+//	public Customer addCustomer(Customer customer) ;
+//	public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
+//	public Customer deleteCustomer(Customer customer) throws CustomerNotFoundException;
+//	public Customer viewCustomer(int custid) throws CustomerNotFoundException;
+//	public List<Customer> viewAllCustomers();
+//	public List<Customer> viewCustomerList(LocalDate dateOfApplication);
 
 
 }
-

@@ -15,7 +15,6 @@ public class EMI {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private long EMIId;
 	@Column
 	private LocalDate dueDate;
@@ -28,10 +27,20 @@ public class EMI {
 	@Column
 	private long loanAgreementId;
 
-	@Override
-	public String toString() {
-		return "EMI [EMIId=" + EMIId + ", dueDate=" + dueDate + ", emiAmount=" + emiAmount + ", loanAmount="
-				+ loanAmount + ", interestAmount=" + interestAmount + ", loanAgreementId=" + loanAgreementId + "]";
+	public EMI() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,
+			long loanAgreementId) {
+		super();
+		EMIId = eMIId;
+		this.dueDate = dueDate;
+		this.emiAmount = emiAmount;
+		this.loanAmount = loanAmount;
+		this.interestAmount = interestAmount;
+		this.loanAgreementId = loanAgreementId;
 	}
 
 	public long getEMIId() {
@@ -82,20 +91,10 @@ public class EMI {
 		this.loanAgreementId = loanAgreementId;
 	}
 
-	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,
-			long loanAgreementId) {
-		super();
-		EMIId = eMIId;
-		this.dueDate = dueDate;
-		this.emiAmount = emiAmount;
-		this.loanAmount = loanAmount;
-		this.interestAmount = interestAmount;
-		this.loanAgreementId = loanAgreementId;
-	}
-
-	public EMI() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "EMI [EMIId=" + EMIId + ", dueDate=" + dueDate + ", emiAmount=" + emiAmount + ", loanAmount="
+				+ loanAmount + ", interestAmount=" + interestAmount + ", loanAgreementId=" + loanAgreementId + "]";
 	}
 
 }
