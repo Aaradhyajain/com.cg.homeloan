@@ -17,8 +17,7 @@ public class LoanAgreement {
 	private long loanAgreementId;
 	@Column
 	private long loanApplicationId;
-
-	@OneToOne
+	@OneToOne 
 	private EMI emi;
 
 	public long getLoanAgreementId() {

@@ -9,6 +9,8 @@ import com.cg.homeloan.repositories.ICustomerRepository;
 
 
 public interface ICustomerService  {
+	
+	
 	public Customer addCustomer(Customer customer) ;
 	public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
 	public Customer deleteCustomer(Customer customer) throws CustomerNotFoundException;
@@ -18,3 +20,4 @@ public interface ICustomerService  {
 
 
 }
+
