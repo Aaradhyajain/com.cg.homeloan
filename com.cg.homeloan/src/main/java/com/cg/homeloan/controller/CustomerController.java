@@ -30,7 +30,7 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(customer1,HttpStatus.OK);
 	}
 	
-	@RequestMapping("/customer/{userId}")
+	@GetMapping("/customer/{userId}")
 	public ResponseEntity<Customer> getCustomer(@PathVariable("userId") int userId) throws CustomerNotFoundException {
 		Customer customer=customerService.getCustomer(userId);
 		return new ResponseEntity<Customer>(customer,HttpStatus.OK);
