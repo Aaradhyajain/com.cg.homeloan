@@ -5,12 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "all_User")
+@Table(name = "all_user")
 public class User {
 
 	@Id
@@ -18,21 +16,9 @@ public class User {
 	@Column
 	private int userId;
 	@Column
-	private String username;
-	@Column
 	private String password;
 	@Column
 	private String role;
-
-	
-	@OneToOne
-	@JoinColumn(name="userId")
-	private Customer customer;
-	
-
-	@OneToOne
-	@JoinColumn(name="userId")
-	private Admin admin;
 
 	public int getUserId() {
 		return userId;
@@ -40,14 +26,6 @@ public class User {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getPassword() {
@@ -65,22 +43,17 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+		return "User [userId=" + userId + ", password=" + password + ", role=" + role + "]";
 	}
 
-	public User(int userId,String username, String password, String role) {
+	public User(int userId, String password, String role) {
 		super();
 		this.userId = userId;
-		this.username=username;
 		this.password = password;
 		this.role = role;
-		
 	}
 
 	public User() {
