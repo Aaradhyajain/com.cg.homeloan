@@ -37,8 +37,9 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customers")
-	public List<Customer> getAllCustomer(){
-		return customerService.getAllCustomers();
+	public ResponseEntity<List<Customer>> getAllCustomers(){
+		List<Customer> customerList = customerService.getAllCustomers();
+		return new ResponseEntity<List<Customer>>(customerList,HttpStatus.OK);
 	}
 	
 	@PutMapping("/customer/{userId}")
