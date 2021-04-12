@@ -9,6 +9,10 @@ public class HomeLoanBorrowingAmountCalculator {
 	private double monthlyExpenses;
 	private double otherMonthlyExpenses;
 	
-	public double getHomeLoanBorrowingAmount() {return 0;}
+	public double getHomeLoanBorrowingAmount() {
+		
+		
+		
+		return 0;}
 	
 }
