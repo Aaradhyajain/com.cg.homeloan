@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
-import com.cg.homeloan.repositories.ILoanAgreementRepository;
 
 public interface ILoanAgreementService{
 	

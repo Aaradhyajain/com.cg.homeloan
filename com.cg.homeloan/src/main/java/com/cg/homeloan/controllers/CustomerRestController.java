@@ -6,8 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/homeloan/api")
 public class CustomerRestController {
-	
-	
-		
 
 }
