@@ -1,5 +1,6 @@
 package com.cg.homeloan.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class LoanAgreement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long loanAgreementId;
 	private long loanApplicationId;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private EMI emi;
 
 	public long getLoanAgreementId() {

@@ -2,28 +2,22 @@ package com.cg.homeloan.services;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cg.homeloan.entities.LoanAgreement;
+import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 
-@Service
-public interface ILoanAgreementService {
+public interface ILoanAgreementService{
 
-	public static LoanAgreement addLoanAgreement(LoanAgreement loanAgreement) {
+	public LoanAgreement addLoanAgreement(LoanAgreement loanAgreement);
 
-		return null;
-	}
+	public LoanAgreement updateLoanAgreement(int loanAgreementId, LoanAgreement loanAgreement)
+			throws LoanAgreementNotFoundException;
 
-	public static LoanAgreement updateLoanAgreement(LoanAgreement loanAgreement) {
-		return null;
-	}
-
-	public static LoanAgreement deleteLoanAgreement(long loanAgreementId) {
-		return null;
-	}
+	public LoanAgreement deleteLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException;
 
 	public List<LoanAgreement> retrieveAllLoanAgreement();
 
-	public LoanAgreement retrieveLoanAgreementById(long loanAgreementId);
+	public LoanAgreement retrieveLoanAgreementById(int loanAgreementId) throws LoanAgreementNotFoundException;
 
 }

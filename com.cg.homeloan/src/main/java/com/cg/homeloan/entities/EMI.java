@@ -8,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "emi")
 
@@ -15,6 +19,9 @@ public class EMI {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long EMIId;
+	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dueDate;
 	private double emiAmount;
 	private double loanAmount;
