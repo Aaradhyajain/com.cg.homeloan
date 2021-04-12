@@ -8,12 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "fvo")
+@Table(name = "finance_officer")
 public class FinanceVerificationOfficer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private int userId;
 	@Column
 	private String finOfficerName;
@@ -25,18 +24,19 @@ public class FinanceVerificationOfficer {
 		// TODO Auto-generated constructor stub
 	}
 
+	public FinanceVerificationOfficer(int userId, String finOfficerName, String finOfficerContact) {
+		super();
+		this.userId = userId;
+		this.finOfficerName = finOfficerName;
+		this.finOfficerContact = finOfficerContact;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
 
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-
-	@Override
-	public String toString() {
-		return "FinanceVerificationOfficer [userId=" + userId + ", finOfficerName=" + finOfficerName
-				+ ", finOfficerContact=" + finOfficerContact + "]";
 	}
 
 	public String getFinOfficerName() {
@@ -55,10 +55,10 @@ public class FinanceVerificationOfficer {
 		this.finOfficerContact = finOfficerContact;
 	}
 
-	public FinanceVerificationOfficer(int userId, String finOfficerName, String finOfficerContact) {
-		super();
-		this.userId = userId;
-		this.finOfficerName = finOfficerName;
-		this.finOfficerContact = finOfficerContact;
+	@Override
+	public String toString() {
+		return "FinanceVerificationOfficer [userId=" + userId + ", finOfficerName=" + finOfficerName
+				+ ", finOfficerContact=" + finOfficerContact + "]";
 	}
+
 }

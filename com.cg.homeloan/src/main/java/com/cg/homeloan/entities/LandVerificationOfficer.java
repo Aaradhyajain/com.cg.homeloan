@@ -8,11 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "lvo")
+@Table(name = "land_officer")
 public class LandVerificationOfficer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private int userId;
 	@Column
 	private String officerName;
@@ -22,6 +21,13 @@ public class LandVerificationOfficer {
 	public LandVerificationOfficer() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public LandVerificationOfficer(int userId, String officerName, String officerContact) {
+		super();
+		this.userId = userId;
+		this.officerName = officerName;
+		this.officerContact = officerContact;
 	}
 
 	public int getUserId() {
@@ -52,13 +58,6 @@ public class LandVerificationOfficer {
 	public String toString() {
 		return "LandVerificationOfficer [userId=" + userId + ", officerName=" + officerName + ", officerContact="
 				+ officerContact + "]";
-	}
-
-	public LandVerificationOfficer(int userId, String officerName, String officerContact) {
-		super();
-		this.userId = userId;
-		this.officerName = officerName;
-		this.officerContact = officerContact;
 	}
 
 }

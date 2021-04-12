@@ -9,37 +9,52 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "loanapplication")
+@Table(name = "loan_application")
 public class LoanApplication {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private long applicationId;
 	@Column
 	private LocalDate applicationDate;
 	@OneToOne
+	//@JoinColumn(name = "applicationId")
 	private Customer customer;
 	@Column
 	private double loanAppliedAmount;
 	@Column
 	private double loanApprovedAmount;
-	@Column(updatable = false)
-	private boolean landVerificationApproval = false;
-	@Column(updatable = false)
-	private boolean financeVerificationApproval = false;
-	@Column(updatable = false)
-	private boolean adminApproval = false;
-	@Column(name = "status", updatable = false)
+	@Column
+	private boolean landVerificationApproval;
+	@Column
+	private boolean financeVerificationApproval;
+	@Column
+	private boolean adminApproval;
 	@Enumerated(EnumType.STRING)
-	private Status status = Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
+	private Status status;
 
 	public LoanApplication() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public LoanApplication(long applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
+			double loanApprovedAmount, boolean landVerificationApproval, boolean financeVerificationApproval,
+			boolean adminApproval, Status status) {
+		super();
+		this.applicationId = applicationId;
+		this.applicationDate = applicationDate;
+		this.customer = customer;
+		this.loanAppliedAmount = loanAppliedAmount;
+		this.loanApprovedAmount = loanApprovedAmount;
+		this.landVerificationApproval = landVerificationApproval;
+		this.financeVerificationApproval = financeVerificationApproval;
+		this.adminApproval = adminApproval;
+		this.status = status;
 	}
 
 	public long getApplicationId() {
@@ -121,21 +136,6 @@ public class LoanApplication {
 				+ loanApprovedAmount + ", landVerificationApproval=" + landVerificationApproval
 				+ ", financeVerificationApproval=" + financeVerificationApproval + ", adminApproval=" + adminApproval
 				+ ", status=" + status + "]";
-	}
-
-	public LoanApplication(long applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
-			double loanApprovedAmount, boolean landVerificationApproval, boolean financeVerificationApproval,
-			boolean adminApproval, Status status) {
-		super();
-		this.applicationId = applicationId;
-		this.applicationDate = applicationDate;
-		this.customer = customer;
-		this.loanAppliedAmount = loanAppliedAmount;
-		this.loanApprovedAmount = loanApprovedAmount;
-		this.landVerificationApproval = landVerificationApproval;
-		this.financeVerificationApproval = financeVerificationApproval;
-		this.adminApproval = adminApproval;
-		this.status = status;
 	}
 
 }

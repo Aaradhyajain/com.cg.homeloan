@@ -13,9 +13,9 @@ import javax.persistence.Table;
 @Table(name = "customer")
 public class Customer {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@GeneratedValue//(strategy = GenerationType.AUTO)
 	private int userId;
+
 	@Column
 	private String customerName;
 	@Column
@@ -33,11 +33,23 @@ public class Customer {
 	@Column
 	private String panNumber;
 
-	@Override
-	public String toString() {
-		return "Customer [userId=" + userId + ", customerName=" + customerName + ", mobileNumber=" + mobileNumber
-				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
+			String gender, String nationality, String aadharNumber, String panNumber) {
+		super();
+		this.userId = userId;
+		this.customerName = customerName;
+		this.mobileNumber = mobileNumber;
+		this.emailId = emailId;
+		this.dateOfBirth = dateOfBirth;
+		this.gender = gender;
+		this.nationality = nationality;
+		this.aadharNumber = aadharNumber;
+		this.panNumber = panNumber;
 	}
 
 	public int getUserId() {
@@ -112,23 +124,11 @@ public class Customer {
 		this.panNumber = panNumber;
 	}
 
-	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber) {
-		super();
-		this.userId = userId;
-		this.customerName = customerName;
-		this.mobileNumber = mobileNumber;
-		this.emailId = emailId;
-		this.dateOfBirth = dateOfBirth;
-		this.gender = gender;
-		this.nationality = nationality;
-		this.aadharNumber = aadharNumber;
-		this.panNumber = panNumber;
-	}
-
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Customer [userId=" + userId + ", customerName=" + customerName + ", mobileNumber=" + mobileNumber
+				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
+				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
 	}
 
 }

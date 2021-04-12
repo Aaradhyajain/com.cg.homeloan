@@ -1,13 +1,10 @@
 package com.cg.homeloan.services;
 
-import java.util.List;
-
 import com.cg.homeloan.entities.LoanApplication;
-import com.cg.homeloan.exceptions.LandVerificationException;
+import com.cg.homeloan.repositories.ILandVerificationRepository;
 
 public interface ILandVerificationService {
-	
-	public LoanApplication updateStatus(LoanApplication loanApplication) throws LandVerificationException;
+		public void updateStatus(LoanApplication loanApplication);
 
 		}
 

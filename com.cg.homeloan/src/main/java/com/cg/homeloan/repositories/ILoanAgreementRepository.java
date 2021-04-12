@@ -1,14 +1,13 @@
-package com.cg.homeloan.services;
+package com.cg.homeloan.repositories;
 
 import java.util.List;
 
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
-import com.cg.homeloan.repositories.ILoanAgreementRepository;
 
-public interface ILoanAgreementService{
+public interface ILoanAgreementRepository {
 	
-	public LoanAgreement addLoanAgreement(LoanAgreement loanAgreement) ;
+	public LoanAgreement addLoanAgreement(LoanAgreement loanAgreement);
 		
 		public LoanAgreement updateLoanAgreement(LoanAgreement loanAgreement);
 		public LoanAgreement deleteLoanAgreement(long loanAgreementId);

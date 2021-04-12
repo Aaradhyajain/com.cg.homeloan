@@ -1,11 +1,10 @@
-package com.cg.homeloan.services;
+package com.cg.homeloan.repositories;
 
 import java.util.List;
 
 import com.cg.homeloan.entities.LoanApplication;
-import com.cg.homeloan.repositories.ILoanApplicationRepository;
 
-public interface ILoanApplicationService  {
+public interface ILoanApplicationRepository {
 	
 	public LoanApplication addLoanApplication(LoanApplication loanApplication);
 	
