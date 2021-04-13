@@ -1,6 +1,6 @@
 package com.cg.homeloan.repositories;
 
-import java.util.List;
+//import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

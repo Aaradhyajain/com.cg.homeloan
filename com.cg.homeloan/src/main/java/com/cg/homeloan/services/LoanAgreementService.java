@@ -9,37 +9,37 @@ import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.repositories.ILoanAgreementRepository;
 
-
 @Service
 public class LoanAgreementService {
-	
+
 	@Autowired
-	ILoanAgreementRepository loanAgreementRepository; 
-	
+	ILoanAgreementRepository loanAgreementRepository;
+
 	public LoanAgreement addLoanAgreement(LoanAgreement loanAgreement) {
-		LoanAgreement obj = loanAgreementRepository.save(loanAgreement); 
+		LoanAgreement obj = loanAgreementRepository.save(loanAgreement);
 		return obj;
 	}
-	
-	public List<LoanAgreement> getAllLoanAgreements(){
+
+	public List<LoanAgreement> getAllLoanAgreements() {
 		List<LoanAgreement> list = loanAgreementRepository.findAll();
 		return list;
 	}
 
+	public LoanAgreement deleteLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException {
+		LoanAgreement loanAgreement = loanAgreementRepository.findById(loanAgreementId)
+				.orElseThrow(() -> new LoanAgreementNotFoundException("Loan Agreement Not Found!"));
+		loanAgreementRepository.deleteById(loanAgreementId);
+		return loanAgreement;
+	}
+
+	public LoanAgreement updateLoanAgreement(long loanAgreementId, LoanAgreement loanAgreement)
+			throws LoanAgreementNotFoundException {
+		loanAgreementRepository.findById(loanAgreementId)
+				.orElseThrow(() -> new LoanAgreementNotFoundException("Loan Agreement Not Found!"));
+		return loanAgreementRepository.save(loanAgreement);
+	}
+
 	/*
-	 * public LoanAgreement updateLoanAgreement(int loanAgreementId, LoanAgreement
-	 * loanAgreement) throws LoanAgreementNotFoundException{
-	 * loanAgreementRepository.findById(loanAgreementId).orElseThrow(()->new
-	 * LoanAgreementNotFoundException("Loan Agreement Not Found!")); return
-	 * loanAgreementRepository.save(loanAgreement); }
-	 * 
-	 * 
-	 * 
-	 * public LoanAgreement deleteLoanAgreement(int loanAgreementId) throws
-	 * LoanAgreementNotFoundException{ LoanAgreement loanAgreement
-	 * =loanAgreementRepository.findById(loanAgreementId) .orElseThrow(()-> new
-	 * LoanAgreementNotFoundException("Loan Agreement Not Found!"));
-	 * loanAgreementRepository.deleteById(loanAgreementId); return loanAgreement; }
 	 * 
 	 * public List<LoanAgreement> retrieveAllLoanAgreement(){ return
 	 * loanAgreementRepository.findAll(); }
@@ -48,6 +48,6 @@ public class LoanAgreementService {
 	 * LoanAgreementNotFoundException{ return
 	 * loanAgreementRepository.findById(loanAgreementId) .orElseThrow(()-> new
 	 * LoanAgreementNotFoundException("Loan Agreement Not Found!")); }
-	 */	
-	
+	 */
+
 }
