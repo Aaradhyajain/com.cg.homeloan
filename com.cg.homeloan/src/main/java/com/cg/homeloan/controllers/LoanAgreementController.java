@@ -45,7 +45,7 @@ public class LoanAgreementController {
 		return new ResponseEntity<LoanAgreement>(loanAgreementData, HttpStatus.OK);
 	}
 
-	@PutMapping("/updateLoanAgreement")
+	@PutMapping("/updateLoanAgreement/{loanAgreementId}")
 	public ResponseEntity<LoanAgreement> updateUser(@PathVariable long loanAgreementId,
 			@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
 		LoanAgreement loanAgreementData = loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement);
