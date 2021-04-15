@@ -9,10 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "admin")
-public class Admin {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
+public class Admin extends User {
+
 	@Column
 	private String adminName;
 	@Column
@@ -23,21 +21,13 @@ public class Admin {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Admin(int userId, String adminName, String adminContact) {
-		super();
-		this.userId = userId;
+	public Admin(String adminContact,String adminName,String password,int userId, String username) {
+		super(userId,username,password);
 		this.adminName = adminName;
 		this.adminContact = adminContact;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
+	
 	public String getAdminName() {
 		return adminName;
 	}
@@ -56,7 +46,7 @@ public class Admin {
 
 	@Override
 	public String toString() {
-		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
+		return "Admin [ adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
 
 }

@@ -7,8 +7,8 @@ public class AdminApprovalException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AdminApprovalException(String message, Throwable cause) {
-		super(message, cause);
+	public AdminApprovalException(String message) {
+		super(message);
 		// TODO Auto-generated constructor stub
 	}
 

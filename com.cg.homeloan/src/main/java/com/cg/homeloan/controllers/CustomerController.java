@@ -1,4 +1,4 @@
-package com.cg.homeloan.controller;
+package com.cg.homeloan.controllers;
 
 import java.util.List;
 
@@ -20,38 +20,40 @@ import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.services.CustomerService;
 
 @RestController
+@RequestMapping("/homeloan")
 public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@PostMapping("/customer")
+	@PostMapping("/addCustomer")
 	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
-		Customer customer1 = customerService.addCustomer(customer);
-		return new ResponseEntity<Customer>(customer1,HttpStatus.OK);
+		return new ResponseEntity<Customer>(customerService.addCustomer(customer),HttpStatus.OK);
 	}
 	
 	@GetMapping("/customer/{userId}")
-	public ResponseEntity<Customer> getCustomer(@PathVariable("userId") int userId) throws CustomerNotFoundException {
-		Customer customer=customerService.getCustomer(userId);
-		return new ResponseEntity<Customer>(customer,HttpStatus.OK);
+	public ResponseEntity<Customer> viewCustomer(@PathVariable("userId") int userId) throws CustomerNotFoundException {
+		return new ResponseEntity<Customer>(customerService.viewCustomer(userId),HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/customers")
-	public ResponseEntity<List<Customer>> getAllCustomers(){
-		List<Customer> customerList = customerService.getAllCustomers();
-		return new ResponseEntity<List<Customer>>(customerList,HttpStatus.OK);
+	public ResponseEntity<List<Customer>> viewAllCustomers(){
+		return new ResponseEntity<List<Customer>>(customerService.viewAllCustomers(),HttpStatus.OK);
 	}
 	
-	@PutMapping("/customer/{userId}")
+	@PutMapping("/updateCustomer/{userId}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable int userId, @RequestBody Customer customer) throws CustomerNotFoundException {
-		Customer customer1 = customerService.updateCustomer(userId,customer);
-		return new ResponseEntity<Customer>(customer1,HttpStatus.OK);
+		return new ResponseEntity<Customer>(customerService.updateCustomer(userId,customer),HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/customer/{userId}")
+	@DeleteMapping("/deleteCustomer/{userId}")
 	public ResponseEntity<Customer> deleteCustomer(@PathVariable int userId) throws CustomerNotFoundException{
-		Customer customer=customerService.deleteCustomer(userId);
-		return new ResponseEntity<Customer>(customer,HttpStatus.OK);
+		return new ResponseEntity<Customer>(customerService.deleteCustomer(userId),HttpStatus.FOUND);
+	}
+	
+	//Validating the user
+	@GetMapping("/validatingCustomer/{username}/{password}")
+	public boolean isValidCustomer(@PathVariable String username,@PathVariable String password) {
+		return customerService.isValidCustomer(username, password);
 	}
 
 }

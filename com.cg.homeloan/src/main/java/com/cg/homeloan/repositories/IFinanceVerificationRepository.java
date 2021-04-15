@@ -1,8 +1,11 @@
 package com.cg.homeloan.repositories;
 
-import com.cg.homeloan.entities.LoanApplication;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IFinanceVerificationRepository {
-public void updateStatus(LoanApplication loanApplication);
+import com.cg.homeloan.entities.FinanceVerificationOfficer;
 
+public interface IFinanceVerificationRepository extends JpaRepository<FinanceVerificationOfficer, Integer>{
+
+
+	public FinanceVerificationOfficer findByUsernameAndPassword(String username, String password);
 }
