@@ -1,5 +1,6 @@
 package com.cg.homeloan.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,13 +8,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "fvo")
+@Table(name = "finance_officer")
 public class FinanceVerificationOfficer {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
+	@Column
 	private String finOfficerName;
+	@Column
 	private String finOfficerContact;
+
+	public FinanceVerificationOfficer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public FinanceVerificationOfficer(int userId, String finOfficerName, String finOfficerContact) {
+		super();
+		this.userId = userId;
+		this.finOfficerName = finOfficerName;
+		this.finOfficerContact = finOfficerContact;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -36,18 +52,6 @@ public class FinanceVerificationOfficer {
 	}
 
 	public void setFinOfficerContact(String finOfficerContact) {
-		this.finOfficerContact = finOfficerContact;
-	}
-
-	public FinanceVerificationOfficer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public FinanceVerificationOfficer(int userId, String finOfficerName, String finOfficerContact) {
-		super();
-		this.userId = userId;
-		this.finOfficerName = finOfficerName;
 		this.finOfficerContact = finOfficerContact;
 	}
 

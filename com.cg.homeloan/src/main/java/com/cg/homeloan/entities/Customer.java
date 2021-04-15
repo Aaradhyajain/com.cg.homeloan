@@ -2,6 +2,7 @@ package com.cg.homeloan.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,16 +13,50 @@ import javax.persistence.Table;
 @Table(name = "customer")
 public class Customer {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue//(strategy = GenerationType.AUTO)
 	private int userId;
+
+	@Column
 	private String customerName;
+	@Column
 	private String mobileNumber;
+	@Column
 	private String emailId;
+	@Column
 	private LocalDate dateOfBirth;
+	@Column
 	private String gender;
+	@Column
 	private String nationality;
+	@Column
 	private String aadharNumber;
+	@Column
 	private String panNumber;
+	private int yearlyIncome;
+	/**
+	 * Customer monthly income 
+	 * getter setter;
+	 */
+
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
+			String gender, String nationality, String aadharNumber, String panNumber, int yearlyIncome) {
+		super();
+		this.userId = userId;
+		this.customerName = customerName;
+		this.mobileNumber = mobileNumber;
+		this.emailId = emailId;
+		this.dateOfBirth = dateOfBirth;
+		this.gender = gender;
+		this.nationality = nationality;
+		this.aadharNumber = aadharNumber;
+		this.panNumber = panNumber;
+		this.yearlyIncome=yearlyIncome;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -29,6 +64,14 @@ public class Customer {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+
+	public int getYearlyIncome() {
+		return yearlyIncome;
+	}
+
+	public void setYearlyIncome(int yearlyIncome) {
+		this.yearlyIncome = yearlyIncome;
 	}
 
 	public String getCustomerName() {
@@ -95,30 +138,14 @@ public class Customer {
 		this.panNumber = panNumber;
 	}
 
-	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber) {
-		super();
-		this.userId = userId;
-		this.customerName = customerName;
-		this.mobileNumber = mobileNumber;
-		this.emailId = emailId;
-		this.dateOfBirth = dateOfBirth;
-		this.gender = gender;
-		this.nationality = nationality;
-		this.aadharNumber = aadharNumber;
-		this.panNumber = panNumber;
-	}
-
-	public Customer() {
-		super();
-
-	}
-
 	@Override
 	public String toString() {
 		return "Customer [userId=" + userId + ", customerName=" + customerName + ", mobileNumber=" + mobileNumber
 				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + ", yearlyIncome="
+				+ yearlyIncome + "]";
 	}
+
+	
 
 }

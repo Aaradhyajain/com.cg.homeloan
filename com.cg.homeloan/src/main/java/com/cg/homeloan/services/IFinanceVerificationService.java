@@ -1,9 +1,9 @@
 package com.cg.homeloan.services;
 
 import com.cg.homeloan.entities.LoanApplication;
-//import com.cg.homeloan.repositories.IFinanceVerificationRepository;
+import com.cg.homeloan.exceptions.FinanceVerificationException;
 
 public interface IFinanceVerificationService  {
-public void updateStatus(LoanApplication loanApplication) ;
+public LoanApplication updateStatus(LoanApplication loanApplication) throws FinanceVerificationException ;
 
 }

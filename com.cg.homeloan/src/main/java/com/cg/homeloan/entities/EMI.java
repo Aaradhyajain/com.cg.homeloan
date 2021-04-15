@@ -2,31 +2,46 @@ package com.cg.homeloan.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
 @Table(name = "emi")
-
 public class EMI {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long EMIId;
-	
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	@Column
 	private LocalDate dueDate;
+	@Column
 	private double emiAmount;
+	@Column
 	private double loanAmount;
+	@Column
 	private double interestAmount;
+	@Column
 	private long loanAgreementId;
+
+	public EMI() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,
+			long loanAgreementId) {
+		super();
+		EMIId = eMIId;
+		this.dueDate = dueDate;
+		this.emiAmount = emiAmount;
+		this.loanAmount = loanAmount;
+		this.interestAmount = interestAmount;
+		this.loanAgreementId = loanAgreementId;
+	}
 
 	public long getEMIId() {
 		return EMIId;
@@ -74,22 +89,6 @@ public class EMI {
 
 	public void setLoanAgreementId(long loanAgreementId) {
 		this.loanAgreementId = loanAgreementId;
-	}
-
-	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,
-			long loanAgreementId) {
-		super();
-		EMIId = eMIId;
-		this.dueDate = dueDate;
-		this.emiAmount = emiAmount;
-		this.loanAmount = loanAmount;
-		this.interestAmount = interestAmount;
-		this.loanAgreementId = loanAgreementId;
-	}
-
-	public EMI() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

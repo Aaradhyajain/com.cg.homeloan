@@ -8,16 +8,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "All_user")
+@Table(name = "user_data")
 public class User {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	@Column
+	private String userName;
+	@Column
 	private String password;
 	@Column
 	private String role;
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(int userId, String userName, String password, String role) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.role = role;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -25,6 +39,14 @@ public class User {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -41,18 +63,6 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	public User(int userId, String password, String role) {
-		super();
-		this.userId = userId;
-		this.password = password;
-		this.role = role;
-	}
-
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

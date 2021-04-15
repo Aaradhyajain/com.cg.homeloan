@@ -1,39 +1,80 @@
-2021-04-11 15:04:23.951  INFO 11424 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 1.8.0_282 on LAPTOP-P7MNVEN4 with PID 11424 (C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan\bin\main started by HP in C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan)
-2021-04-11 15:04:23.974  INFO 11424 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
-2021-04-11 15:04:24.065  INFO 11424 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\HP\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/HP/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
-2021-04-11 15:04:24.066  INFO 11424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-11 15:04:24.066  INFO 11424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-11 15:04:25.542  INFO 11424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-11 15:04:25.672  INFO 11424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 1 JPA repository interfaces.
-2021-04-11 15:04:26.628  INFO 11424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2021-04-11 15:04:26.642  INFO 11424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-11 15:04:26.643  INFO 11424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-04-11 15:04:26.772  INFO 11424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-04-11 15:04:26.772  INFO 11424 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2705 ms
-2021-04-11 15:04:27.186  INFO 11424 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-11 15:04:27.398  INFO 11424 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-11 15:04:27.650  INFO 11424 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-11 15:04:27.836  INFO 11424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-11 15:04:28.343  INFO 11424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-11 15:04:28.368  INFO 11424 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2021-04-11 15:04:35.215  INFO 11424 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-11 15:04:35.262  INFO 11424 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:04:35.351  INFO 11424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-11 15:04:35.910  WARN 11424 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-11 15:04:36.451  INFO 11424 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 15:04:36.798  INFO 11424 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:04:37.960  WARN 11424 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
-2021-04-11 15:04:37.960  INFO 11424 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:04:37.962  INFO 11424 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:04:37.966  INFO 11424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-11 15:04:37.981  INFO 11424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-04-11 15:04:37.984  INFO 11424 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-04-11 15:04:38.023  INFO 11424 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2021-04-14 09:51:27.524  INFO 8472 --- [restartedMain] com.cg.homeloan.Application              : Starting Application using Java 15.0.2 on DESKTOP-6NTE1KV with PID 8472 (C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan\bin\main started by saish in C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan)
+2021-04-14 09:51:27.534  INFO 8472 --- [restartedMain] com.cg.homeloan.Application              : No active profile set, falling back to default profiles: default
+2021-04-14 09:51:27.663  INFO 8472 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\saish\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2021-04-14 09:51:27.664  INFO 8472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-14 09:51:27.665  INFO 8472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-14 09:51:29.105  INFO 8472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 09:51:29.198  INFO 8472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2021-04-14 09:51:30.314  INFO 8472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-14 09:51:30.328  INFO 8472 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 09:51:30.329  INFO 8472 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 09:51:30.464  INFO 8472 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 09:51:30.465  INFO 8472 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2797 ms
+2021-04-14 09:51:30.848  INFO 8472 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-14 09:51:30.961  INFO 8472 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-14 09:51:31.206  INFO 8472 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-14 09:51:31.357  INFO 8472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 09:51:31.636  INFO 8472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 09:51:31.661  INFO 8472 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-14 09:51:36.740  INFO 8472 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-14 09:51:36.750  INFO 8472 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:51:36.772  INFO 8472 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-14 09:51:37.257  WARN 8472 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'iCustomerRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ICustomerRepository' defined in com.cg.homeloan.repositories.ICustomerRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.Customer com.cg.homeloan.repositories.ICustomerRepository.viewCustomer(int) throws com.cg.homeloan.exceptions.CustomerNotFoundException! No property viewCustomer found for type Customer!
+2021-04-14 09:51:37.258  INFO 8472 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:51:37.263  INFO 8472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 09:51:37.275  INFO 8472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 09:51:37.280  INFO 8472 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-14 09:51:37.294  INFO 8472 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-04-11 15:04:38.098 ERROR 11424 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2021-04-14 09:51:37.335 ERROR 8472 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'iCustomerRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ICustomerRepository' defined in com.cg.homeloan.repositories.ICustomerRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.Customer com.cg.homeloan.repositories.ICustomerRepository.viewCustomer(int) throws com.cg.homeloan.exceptions.CustomerNotFoundException! No property viewCustomer found for type Customer!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.cg.homeloan.Application.main(Application.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerService': Unsatisfied dependency expressed through field 'iCustomerRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ICustomerRepository' defined in com.cg.homeloan.repositories.ICustomerRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.Customer com.cg.homeloan.repositories.ICustomerRepository.viewCustomer(int) throws com.cg.homeloan.exceptions.CustomerNotFoundException! No property viewCustomer found for type Customer!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ICustomerRepository' defined in com.cg.homeloan.repositories.ICustomerRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.Customer com.cg.homeloan.repositories.ICustomerRepository.viewCustomer(int) throws com.cg.homeloan.exceptions.CustomerNotFoundException! No property viewCustomer found for type Customer!
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
@@ -41,41 +82,30 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:925) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
-	at com.cg.homeloan.HomeLoanAppApplication.main(HomeLoanAppApplication.java:19) [main/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 40 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.Customer com.cg.homeloan.repositories.ICustomerRepository.viewCustomer(int) throws com.cg.homeloan.exceptions.CustomerNotFoundException! No property viewCustomer found for type Customer!
 	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96) ~[spring-data-jpa-2.4.6.jar:2.4.6]
 	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.6.jar:2.4.6]
 	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.6.jar:2.4.6]
 	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.Iterator.forEachRemaining(Iterator.java:116) ~[na:1.8.0_282]
-	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051) ~[na:1.8.0_282]
-	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[na:na]
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1056) ~[na:na]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.Optional.map(Optional.java:215) ~[na:1.8.0_282]
+	at java.base/java.util.Optional.map(Optional.java:258) ~[na:na]
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.6.jar:2.4.6]
@@ -85,76 +115,132 @@ Caused by: java.lang.IllegalArgumentException: Failed to create query for method
 	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.6.jar:2.4.6]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
-	... 22 common frames omitted
-Caused by: org.springframework.data.mapping.PropertyReferenceException: No property addLoanAgreement found for type LoanAgreement!
+	... 50 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property viewCustomer found for type Customer!
 	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:437) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:413) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:366) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:324) ~[na:1.8.0_282]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
 	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:348) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:331) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:249) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
 	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:250) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:383) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[na:na]
 	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:384) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:92) ~[spring-data-commons-2.4.6.jar:2.4.6]
 	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	... 48 common frames omitted
+	... 76 common frames omitted
 
-2021-04-11 15:05:18.099  INFO 4964 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 1.8.0_282 on LAPTOP-P7MNVEN4 with PID 4964 (C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan\bin\main started by HP in C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan)
-2021-04-11 15:05:18.103  INFO 4964 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
-2021-04-11 15:05:18.212  INFO 4964 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\HP\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/HP/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
-2021-04-11 15:05:18.213  INFO 4964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-11 15:05:18.213  INFO 4964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-11 15:05:19.764  INFO 4964 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-11 15:05:19.874  INFO 4964 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interfaces.
-2021-04-11 15:05:21.329  INFO 4964 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2021-04-11 15:05:21.346  INFO 4964 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-11 15:05:21.347  INFO 4964 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-04-11 15:05:21.481  INFO 4964 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-04-11 15:05:21.482  INFO 4964 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3267 ms
-2021-04-11 15:05:22.129  INFO 4964 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-11 15:05:22.219  INFO 4964 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-11 15:05:22.468  INFO 4964 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-11 15:05:22.677  INFO 4964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-11 15:05:23.024  INFO 4964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-11 15:05:23.057  INFO 4964 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2021-04-11 15:05:24.649  INFO 4964 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-11 15:05:24.668  INFO 4964 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:05:24.697  INFO 4964 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-11 15:05:25.134  WARN 4964 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-11 15:05:25.451  INFO 4964 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 15:05:25.658  INFO 4964 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:05:26.594  WARN 4964 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.deleteLoanAgreement(long)! No property deleteLoanAgreement found for type LoanAgreement!
-2021-04-11 15:05:26.595  INFO 4964 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:05:26.602  INFO 4964 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:05:26.607  INFO 4964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-11 15:05:26.626  INFO 4964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-04-11 15:05:26.630  INFO 4964 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-04-11 15:05:26.655  INFO 4964 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2021-04-14 09:55:06.973  INFO 2052 --- [restartedMain] com.cg.homeloan.Application              : Starting Application using Java 15.0.2 on DESKTOP-6NTE1KV with PID 2052 (C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan\bin\main started by saish in C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan)
+2021-04-14 09:55:06.981  INFO 2052 --- [restartedMain] com.cg.homeloan.Application              : No active profile set, falling back to default profiles: default
+2021-04-14 09:55:07.165  INFO 2052 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\saish\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2021-04-14 09:55:07.166  INFO 2052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-14 09:55:07.167  INFO 2052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-14 09:55:08.977  INFO 2052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 09:55:09.071  INFO 2052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2021-04-14 09:55:10.093  INFO 2052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-14 09:55:10.109  INFO 2052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 09:55:10.110  INFO 2052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 09:55:10.234  INFO 2052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 09:55:10.234  INFO 2052 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3062 ms
+2021-04-14 09:55:10.558  INFO 2052 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-14 09:55:10.633  INFO 2052 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-14 09:55:10.805  INFO 2052 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-14 09:55:10.965  INFO 2052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 09:55:11.273  INFO 2052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 09:55:11.289  INFO 2052 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-14 09:55:12.252  INFO 2052 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-14 09:55:12.261  INFO 2052 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:55:12.277  INFO 2052 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-14 09:55:13.004  WARN 2052 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-14 09:55:13.241  WARN 2052 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+2021-04-14 09:55:13.244  INFO 2052 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:55:13.250  INFO 2052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 09:55:13.264  INFO 2052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 09:55:13.268  INFO 2052 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-14 09:55:13.281  INFO 2052 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-04-11 15:05:26.696 ERROR 4964 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2021-04-14 09:55:13.315 ERROR 2052 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.deleteLoanAgreement(long)! No property deleteLoanAgreement found for type LoanAgreement!
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.cg.homeloan.Application.main(Application.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
@@ -162,120 +248,127 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:925) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 42 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:723) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 56 common frames omitted
+
+2021-04-14 09:58:40.993  INFO 15412 --- [restartedMain] com.cg.homeloan.Application              : Starting Application using Java 15.0.2 on DESKTOP-6NTE1KV with PID 15412 (C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan\bin\main started by saish in C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan)
+2021-04-14 09:58:40.997  INFO 15412 --- [restartedMain] com.cg.homeloan.Application              : No active profile set, falling back to default profiles: default
+2021-04-14 09:58:41.077  INFO 15412 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\saish\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2021-04-14 09:58:41.078  INFO 15412 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-14 09:58:41.079  INFO 15412 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-14 09:58:42.911  INFO 15412 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 09:58:43.038  INFO 15412 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 3 JPA repository interfaces.
+2021-04-14 09:58:44.074  INFO 15412 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-14 09:58:44.093  INFO 15412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 09:58:44.094  INFO 15412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 09:58:44.253  INFO 15412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 09:58:44.254  INFO 15412 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3174 ms
+2021-04-14 09:58:44.639  INFO 15412 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-14 09:58:44.729  INFO 15412 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-14 09:58:44.959  INFO 15412 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-14 09:58:45.133  INFO 15412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 09:58:45.438  INFO 15412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 09:58:45.469  INFO 15412 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-14 09:58:46.696  INFO 15412 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-14 09:58:46.704  INFO 15412 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:58:46.721  INFO 15412 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-14 09:58:47.449  WARN 15412 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-14 09:58:47.560  WARN 15412 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+2021-04-14 09:58:47.564  INFO 15412 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 09:58:47.570  INFO 15412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 09:58:47.587  INFO 15412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 09:58:47.590  INFO 15412 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-14 09:58:47.612  INFO 15412 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-14 09:58:47.657 ERROR 15412 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
-	at com.cg.homeloan.HomeLoanAppApplication.main(HomeLoanAppApplication.java:19) [main/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.deleteLoanAgreement(long)! No property deleteLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.Iterator.forEachRemaining(Iterator.java:116) ~[na:1.8.0_282]
-	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051) ~[na:1.8.0_282]
-	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.Optional.map(Optional.java:215) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
-	... 22 common frames omitted
-Caused by: org.springframework.data.mapping.PropertyReferenceException: No property deleteLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:437) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:413) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:366) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:324) ~[na:1.8.0_282]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:348) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:331) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:249) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:250) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:383) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:384) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:92) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	... 48 common frames omitted
-
-2021-04-11 15:08:21.814  INFO 8840 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 1.8.0_282 on LAPTOP-P7MNVEN4 with PID 8840 (C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan\bin\main started by HP in C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan)
-2021-04-11 15:08:21.819  INFO 8840 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
-2021-04-11 15:08:21.915  INFO 8840 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\HP\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/HP/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
-2021-04-11 15:08:21.915  INFO 8840 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-11 15:08:21.916  INFO 8840 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-11 15:08:23.468  INFO 8840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-11 15:08:23.576  INFO 8840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interfaces.
-2021-04-11 15:08:25.066  INFO 8840 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2021-04-11 15:08:25.085  INFO 8840 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-11 15:08:25.085  INFO 8840 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-04-11 15:08:25.225  INFO 8840 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-04-11 15:08:25.225  INFO 8840 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3308 ms
-2021-04-11 15:08:25.728  INFO 8840 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-11 15:08:25.952  INFO 8840 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-11 15:08:26.200  INFO 8840 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-11 15:08:26.412  INFO 8840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-11 15:08:26.775  INFO 8840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-11 15:08:26.825  INFO 8840 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2021-04-11 15:08:28.427  INFO 8840 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-11 15:08:28.441  INFO 8840 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:08:28.468  INFO 8840 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-11 15:08:28.904  WARN 8840 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-11 15:08:29.220  INFO 8840 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 15:08:29.409  INFO 8840 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:08:30.368  WARN 8840 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
-2021-04-11 15:08:30.370  INFO 8840 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:08:30.373  INFO 8840 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:08:30.379  INFO 8840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-11 15:08:30.401  INFO 8840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-04-11 15:08:30.404  INFO 8840 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-04-11 15:08:30.426  INFO 8840 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-04-11 15:08:30.473 ERROR 8840 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.cg.homeloan.Application.main(Application.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
@@ -283,120 +376,127 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:925) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 42 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:723) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 56 common frames omitted
+
+2021-04-14 10:01:55.003  INFO 14780 --- [restartedMain] com.cg.homeloan.Application              : Starting Application using Java 15.0.2 on DESKTOP-6NTE1KV with PID 14780 (C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan\bin\main started by saish in C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan)
+2021-04-14 10:01:55.009  INFO 14780 --- [restartedMain] com.cg.homeloan.Application              : No active profile set, falling back to default profiles: default
+2021-04-14 10:01:55.090  INFO 14780 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\saish\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2021-04-14 10:01:55.090  INFO 14780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-14 10:01:55.091  INFO 14780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-14 10:01:56.289  INFO 14780 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 10:01:56.387  INFO 14780 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 6 JPA repository interfaces.
+2021-04-14 10:01:57.339  INFO 14780 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-14 10:01:57.352  INFO 14780 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 10:01:57.352  INFO 14780 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 10:01:57.471  INFO 14780 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 10:01:57.472  INFO 14780 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2380 ms
+2021-04-14 10:01:57.831  INFO 14780 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-14 10:01:57.902  INFO 14780 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-14 10:01:58.085  INFO 14780 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-14 10:01:58.208  INFO 14780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 10:01:58.461  INFO 14780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 10:01:58.477  INFO 14780 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-14 10:01:59.637  INFO 14780 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-14 10:01:59.651  INFO 14780 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 10:01:59.680  INFO 14780 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-14 10:02:01.335  WARN 14780 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-14 10:02:01.554  WARN 14780 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+2021-04-14 10:02:01.568  INFO 14780 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 10:02:01.583  INFO 14780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 10:02:01.615  INFO 14780 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 10:02:01.628  INFO 14780 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-14 10:02:01.671  INFO 14780 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-14 10:02:01.803 ERROR 14780 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
-	at com.cg.homeloan.HomeLoanAppApplication.main(HomeLoanAppApplication.java:19) [main/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.Iterator.forEachRemaining(Iterator.java:116) ~[na:1.8.0_282]
-	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051) ~[na:1.8.0_282]
-	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.Optional.map(Optional.java:215) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
-	... 22 common frames omitted
-Caused by: org.springframework.data.mapping.PropertyReferenceException: No property addLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:437) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:413) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:366) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:324) ~[na:1.8.0_282]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:348) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:331) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:249) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:250) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:383) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:384) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:92) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	... 48 common frames omitted
-
-2021-04-11 15:14:17.274  INFO 11544 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 1.8.0_282 on LAPTOP-P7MNVEN4 with PID 11544 (C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan\bin\main started by HP in C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan)
-2021-04-11 15:14:17.281  INFO 11544 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
-2021-04-11 15:14:17.390  INFO 11544 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\HP\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/HP/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
-2021-04-11 15:14:17.391  INFO 11544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-11 15:14:17.392  INFO 11544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-11 15:14:19.007  INFO 11544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-11 15:14:19.120  INFO 11544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interfaces.
-2021-04-11 15:14:20.632  INFO 11544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2021-04-11 15:14:20.652  INFO 11544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-11 15:14:20.653  INFO 11544 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-04-11 15:14:20.782  INFO 11544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-04-11 15:14:20.783  INFO 11544 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3390 ms
-2021-04-11 15:14:21.427  INFO 11544 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-11 15:14:21.516  INFO 11544 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-11 15:14:21.750  INFO 11544 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-11 15:14:21.935  INFO 11544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-11 15:14:22.320  INFO 11544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-11 15:14:22.357  INFO 11544 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2021-04-11 15:14:24.024  INFO 11544 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-11 15:14:24.041  INFO 11544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:14:24.070  INFO 11544 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-11 15:14:24.479  WARN 11544 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-11 15:14:24.775  INFO 11544 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 15:14:24.963  INFO 11544 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:14:25.895  WARN 11544 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
-2021-04-11 15:14:25.896  INFO 11544 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:14:25.898  INFO 11544 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:14:25.902  INFO 11544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-11 15:14:25.935  INFO 11544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-04-11 15:14:25.939  INFO 11544 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-04-11 15:14:25.957  INFO 11544 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-04-11 15:14:25.993 ERROR 11544 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ILoanAgreementRepository' defined in com.cg.homeloan.repositories.ILoanAgreementRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.cg.homeloan.Application.main(Application.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
@@ -404,117 +504,160 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:925) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 42 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:723) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 56 common frames omitted
+
+2021-04-14 10:04:15.172  INFO 8744 --- [restartedMain] com.cg.homeloan.Application              : Starting Application using Java 15.0.2 on DESKTOP-6NTE1KV with PID 8744 (C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan\bin\main started by saish in C:\Users\saish\eclipse-workspace\com.cg.homeloan\com.cg.homeloan)
+2021-04-14 10:04:15.176  INFO 8744 --- [restartedMain] com.cg.homeloan.Application              : No active profile set, falling back to default profiles: default
+2021-04-14 10:04:15.255  INFO 8744 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\saish\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2021-04-14 10:04:15.256  INFO 8744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-14 10:04:15.258  INFO 8744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-14 10:04:16.663  INFO 8744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 10:04:16.780  INFO 8744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 6 JPA repository interfaces.
+2021-04-14 10:04:17.848  INFO 8744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-14 10:04:17.863  INFO 8744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 10:04:17.863  INFO 8744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 10:04:17.999  INFO 8744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 10:04:17.999  INFO 8744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2738 ms
+2021-04-14 10:04:18.322  INFO 8744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-14 10:04:18.387  INFO 8744 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-14 10:04:18.564  INFO 8744 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-14 10:04:18.668  INFO 8744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 10:04:18.961  INFO 8744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 10:04:18.989  INFO 8744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-14 10:04:20.147  INFO 8744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-14 10:04:20.156  INFO 8744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 10:04:20.173  INFO 8744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-14 10:04:20.871  WARN 8744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-14 10:04:20.973  WARN 8744 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+2021-04-14 10:04:20.977  INFO 8744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 10:04:20.983  INFO 8744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 10:04:21.000  INFO 8744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 10:04:21.006  INFO 8744 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-04-14 10:04:21.024  INFO 8744 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-14 10:04:21.059 ERROR 8744 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.5.jar:5.3.5]
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) [spring-boot-2.4.4.jar:2.4.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) [spring-boot-2.4.4.jar:2.4.4]
-	at com.cg.homeloan.HomeLoanAppApplication.main(HomeLoanAppApplication.java:19) [main/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_282]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_282]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_282]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_282]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
-Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract com.cg.homeloan.entities.LoanAgreement com.cg.homeloan.repositories.ILoanAgreementRepository.addLoanAgreement(com.cg.homeloan.entities.LoanAgreement)! No property addLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:107) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:218) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:81) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:100) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:93) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.Iterator.forEachRemaining(Iterator.java:116) ~[na:1.8.0_282]
-	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051) ~[na:1.8.0_282]
-	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:95) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.Optional.map(Optional.java:215) ~[na:1.8.0_282]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:85) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:303) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.cg.homeloan.Application.main(Application.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.1.jar:2.4.1]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/saish/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1598) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1562) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1451) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1338) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.5.jar:5.3.5]
+	... 42 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'landVerificationOfficerController' method 
+com.cg.homeloan.controllers.LandVerificationOfficerController#updateLandStatus(LoanApplication)
+to {PUT [/updateLandVerificationStatus]}: There is already 'financeVerificationOfficerController' bean method
+com.cg.homeloan.controllers.FinanceVerificationOfficerController#updateLandStatus(LoanApplication) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:662) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:628) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:328) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:723) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206) ~[spring-webmvc-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.5.jar:5.3.5]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.5.jar:5.3.5]
-	... 22 common frames omitted
-Caused by: org.springframework.data.mapping.PropertyReferenceException: No property addLoanAgreement found for type LoanAgreement!
-	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:437) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:413) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:366) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:324) ~[na:1.8.0_282]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:348) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:331) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:249) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:250) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:383) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175) ~[na:1.8.0_282]
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_282]
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_282]
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_282]
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_282]
-	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:384) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:92) ~[spring-data-commons-2.4.6.jar:2.4.6]
-	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89) ~[spring-data-jpa-2.4.6.jar:2.4.6]
-	... 48 common frames omitted
+	... 56 common frames omitted
 
-2021-04-11 15:19:45.250  INFO 5584 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 1.8.0_282 on LAPTOP-P7MNVEN4 with PID 5584 (C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan\bin\main started by HP in C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.9.0.RELEASE\com.cg.homeloan)
-2021-04-11 15:19:45.256  INFO 5584 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
-2021-04-11 15:19:45.349  INFO 5584 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\HP\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/HP/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
-2021-04-11 15:19:45.349  INFO 5584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-04-11 15:19:45.350  INFO 5584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-04-11 15:19:46.959  INFO 5584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-11 15:19:47.048  INFO 5584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interfaces.
-2021-04-11 15:19:48.512  INFO 5584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
-2021-04-11 15:19:48.535  INFO 5584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-04-11 15:19:48.536  INFO 5584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
-2021-04-11 15:19:48.671  INFO 5584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-04-11 15:19:48.672  INFO 5584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3321 ms
-2021-04-11 15:19:49.256  INFO 5584 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-11 15:19:49.353  INFO 5584 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-11 15:19:49.607  INFO 5584 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-11 15:19:49.809  INFO 5584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-11 15:19:50.148  INFO 5584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-11 15:19:50.186  INFO 5584 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-2021-04-11 15:19:51.775  INFO 5584 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-11 15:19:51.798  INFO 5584 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-11 15:19:51.823  INFO 5584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-04-11 15:19:52.258  WARN 5584 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-11 15:19:52.569  INFO 5584 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 15:19:52.761  INFO 5584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 15:19:54.097  INFO 5584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
-2021-04-11 15:19:54.101  INFO 5584 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-04-11 15:19:54.189  INFO 5584 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-04-11 15:19:54.245  INFO 5584 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-04-11 15:19:54.609  INFO 5584 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 10.016 seconds (JVM running for 10.979)
-2021-04-11 15:20:46.416  INFO 5584 --- [http-nio-8095-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-11 15:20:46.417  INFO 5584 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-04-11 15:20:46.420  INFO 5584 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-04-11 15:22:13.048  WARN 5584 --- [http-nio-8095-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('1' (code 49)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('1' (code 49)): was expecting double-quote to start field name
- at [Source: (PushbackInputStream); line: 2, column: 4]]
-2021-04-11 15:24:36.336  WARN 5584 --- [http-nio-8095-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
- at [Source: (PushbackInputStream); line: 4, column: 2]]

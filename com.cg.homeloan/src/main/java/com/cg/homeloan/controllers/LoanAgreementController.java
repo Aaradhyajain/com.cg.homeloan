@@ -2,7 +2,6 @@ package com.cg.homeloan.controllers;
 
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
-//import com.cg.homeloan.services.ILoanAgreementService;
 import com.cg.homeloan.services.LoanAgreementService;
 
 import java.util.*;
@@ -16,10 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/homeloan")
 public class LoanAgreementController {
 
 	@Autowired
@@ -27,36 +27,27 @@ public class LoanAgreementController {
 
 	@GetMapping("/AllLoanAgreement")
 	private ResponseEntity<List<LoanAgreement>> getAllAgreementList() {
-		List<LoanAgreement> loanAgreement = loanAgreementService.getAllLoanAgreements();
-		return new ResponseEntity<List<LoanAgreement>>(loanAgreement, HttpStatus.OK);
+		return new ResponseEntity<List<LoanAgreement>>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
 	}
 
-	/*
-	 * @GetMapping("/LoanAgreement/{loanAgreementId}") public
-	 * ResponseEntity<LoanAgreement> getAdmin(@PathVariable("loanAgreementId") int
-	 * loanApplicationId) throws LoanAgreementNotFoundException { LoanAgreement
-	 * loanAgreement =
-	 * loanAgreementService.retrieveLoanAgreementById(loanApplicationId); return new
-	 * ResponseEntity<LoanAgreement>(loanAgreement, HttpStatus.OK); }
-	 */
+	@GetMapping("/LoanAgreement/{loanAgreementId}") public
+	ResponseEntity<LoanAgreement> getLoanAgreement(@PathVariable("loanAgreementId") int loanApplicationId) throws LoanAgreementNotFoundException { 
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.getLoanAgreement(loanApplicationId), HttpStatus.OK);
+	}
+	
 	@PostMapping("/addLoanAgreement")
-	public ResponseEntity<LoanAgreement> addUser(@RequestBody LoanAgreement loanAgreement) {
-		LoanAgreement loanAgreementData = loanAgreementService.addLoanAgreement(loanAgreement);
-		return new ResponseEntity<LoanAgreement>(loanAgreementData, HttpStatus.OK);
+	public ResponseEntity<LoanAgreement> addLoanAgreement(@RequestBody LoanAgreement loanAgreement) {
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.addLoanAgreement(loanAgreement), HttpStatus.OK);
 	}
 
-	@PutMapping("/updateLoanAgreement/{loanAgreementId}")
-	public ResponseEntity<LoanAgreement> updateUser(@PathVariable long loanAgreementId,
-			@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
-		LoanAgreement loanAgreementData = loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement);
-		return new ResponseEntity<LoanAgreement>(loanAgreementData, HttpStatus.OK);
+	@PutMapping("/updateLoanAgreement")
+	public ResponseEntity<LoanAgreement> updateLoanAgreement(@PathVariable int loanAgreementId,@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deleteLoanAgreement/{loanAgreementId}")
-	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable long loanAgreementId)
-			throws LoanAgreementNotFoundException {
-		LoanAgreement loanAgreement = loanAgreementService.deleteLoanAgreement(loanAgreementId);
-		return new ResponseEntity<LoanAgreement>(loanAgreement, HttpStatus.OK);
+	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId) throws LoanAgreementNotFoundException {
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
 	}
 
 }

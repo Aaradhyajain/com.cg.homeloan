@@ -7,8 +7,8 @@ public class LandVerificationException extends Exception{
 		// TODO Auto-generated constructor stub
 	}
 
-	public LandVerificationException(String message, Throwable cause) {
-		super(message, cause);
+	public LandVerificationException(String message) {
+		super(message);
 		// TODO Auto-generated constructor stub
 	}
 	

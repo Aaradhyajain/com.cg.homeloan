@@ -17,10 +17,11 @@ public class Admin {
 	private String adminName;
 	@Column
 	private String adminContact;
+	
 
 	public Admin() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
 
 	public Admin(int userId, String adminName, String adminContact) {
@@ -28,6 +29,25 @@ public class Admin {
 		this.userId = userId;
 		this.adminName = adminName;
 		this.adminContact = adminContact;
+	}
+
+	
+	
+	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 
 	public String getAdminContact() {
@@ -42,4 +62,5 @@ public class Admin {
 	public String toString() {
 		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
+
 }
