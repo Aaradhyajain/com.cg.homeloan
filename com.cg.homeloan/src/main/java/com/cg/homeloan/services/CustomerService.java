@@ -22,12 +22,12 @@ public class CustomerService implements ICustomerService {
 	}
 	
 	@Override
-	public Customer getCustomer(int userId) throws CustomerNotFoundException { 
+	public Customer viewCustomer(int userId) throws CustomerNotFoundException { 
 		return iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
 	}
 	
 	@Override
-	public List<Customer> getAllCustomers(){
+	public List<Customer> viewAllCustomers(){
 		return iCustomerRepository.findAll();
 	}
 	
@@ -39,18 +39,17 @@ public class CustomerService implements ICustomerService {
 	
 	@Override
 	public Customer deleteCustomer(int userId) throws CustomerNotFoundException {
-		Customer customer = getCustomer(userId);//iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
+		Customer customer = viewCustomer(userId);//iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
 		
 		iCustomerRepository.deleteById(userId);
 		return customer;	
 	}
 	
 	
-//	public Customer addCustomer(Customer customer) ;
-//	public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
-//	public Customer deleteCustomer(Customer customer) throws CustomerNotFoundException;
-//	public Customer viewCustomer(int custid) throws CustomerNotFoundException;
-//	public List<Customer> viewAllCustomers();
+	public boolean isValidCustomer(String username, String password) {
+		return iCustomerRepository.findByUsernameAndPassword(username, password)!=null? true :false;
+	}
+	
 //	public List<Customer> viewCustomerList(LocalDate dateOfApplication);
 
 

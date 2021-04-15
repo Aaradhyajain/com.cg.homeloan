@@ -28,14 +28,15 @@ public class LoanApplication {
 	private double loanAppliedAmount;
 	@Column
 	private double loanApprovedAmount;
-	@Column
-	private boolean landVerificationApproval;
-	@Column
-	private boolean financeVerificationApproval;
-	@Column
-	private boolean adminApproval;
+	@Column(updatable=false)
+	private boolean landVerificationApproval = false;
+	@Column(updatable=false)
+	private boolean financeVerificationApproval = false;
+	@Column(updatable=false)
+	private boolean adminApproval = false;
+	@Column(updatable=false)
 	@Enumerated(EnumType.STRING)
-	private Status status;
+	private Status status=Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
 
 	public LoanApplication() {
 		super();

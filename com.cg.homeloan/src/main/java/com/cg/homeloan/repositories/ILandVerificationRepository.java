@@ -1,11 +1,13 @@
 package com.cg.homeloan.repositories;
 
-import com.cg.homeloan.entities.LoanApplication;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ILandVerificationRepository {
-	
-		public void updateStatus(LoanApplication loanApplication);
+import com.cg.homeloan.entities.LandVerificationOfficer;
 
-		}
+public interface ILandVerificationRepository extends JpaRepository<LandVerificationOfficer, Integer> {
+
+	public LandVerificationOfficer findByUsernameAndPassword(String username, String password);
+
+}
 
 

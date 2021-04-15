@@ -9,9 +9,8 @@ public interface ICustomerService {
 	public Customer addCustomer(Customer customer);
 	public Customer updateCustomer(int userId, Customer customer) throws CustomerNotFoundException;
 	public Customer deleteCustomer(int userId) throws CustomerNotFoundException;
-	public Customer getCustomer(int custid) throws CustomerNotFoundException;
-	public List<Customer> getAllCustomers();
+	public Customer viewCustomer(int userId) throws CustomerNotFoundException;
+	public List<Customer> viewAllCustomers();
+//	public List<Customer> viewCustomerList(int theatreid);
 //	public List<Customer> viewCustomerList(LocalDate dateOfApplication);
-//	//public List<Customer> viewCustomerList(int theatreid);
-
 }

@@ -11,10 +11,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
-	@Id
-	@GeneratedValue//(strategy = GenerationType.AUTO)
-	private int userId;
+public class Customer extends User{
+	
 
 	@Column
 	private String customerName;
@@ -38,10 +36,10 @@ public class Customer {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
+	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
 			String gender, String nationality, String aadharNumber, String panNumber) {
-		super();
-		this.userId = userId;
+		super(userId,username,password);
+		
 		this.customerName = customerName;
 		this.mobileNumber = mobileNumber;
 		this.emailId = emailId;
@@ -52,14 +50,7 @@ public class Customer {
 		this.panNumber = panNumber;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
+	
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -126,7 +117,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [userId=" + userId + ", customerName=" + customerName + ", mobileNumber=" + mobileNumber
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
 				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
 				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
 	}

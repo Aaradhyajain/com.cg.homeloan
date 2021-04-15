@@ -8,9 +8,8 @@ public class FinanceVerificationException extends Exception {
 	}
 
 	
-
-	public FinanceVerificationException(String message, Throwable cause) {
-		super(message, cause);
+	public FinanceVerificationException(String message) {
+		super(message);
 		// TODO Auto-generated constructor stub
 	}
 

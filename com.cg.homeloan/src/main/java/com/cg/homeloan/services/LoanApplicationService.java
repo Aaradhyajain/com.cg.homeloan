@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
-import com.cg.homeloan.repositories.LoanApplicationRepository;
+import com.cg.homeloan.repositories.ILoanApplicationRepository;
 
 @Service
 public class LoanApplicationService implements ILoanApplicationService {
 
 	@Autowired
-	LoanApplicationRepository loanapplicationRepository;
+	ILoanApplicationRepository loanapplicationRepository;
 
 	@Override
 	public LoanApplication addLoanApplication(LoanApplication loanApplication) {
