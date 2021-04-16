@@ -59,19 +59,19 @@ public class AdminController {
 	public ResponseEntity<LandVerificationOfficer> addLandOfficer(@RequestBody LandVerificationOfficer officer) {
 		return new ResponseEntity<LandVerificationOfficer>(landVerificationService.addLandOfficer(officer),HttpStatus.OK);
 	}	
-	//updating the status on existing id by admin
- 	@PutMapping("/updateAdminVerificationStatus")
+	
+	@PutMapping("/updateAdminVerificationStatus")
 	public ResponseEntity<LoanApplication> updateLandStatus(@RequestBody LoanApplication loanApplication) throws AdminApprovalException {
 		return new ResponseEntity<LoanApplication>(adminService.updateStatus(loanApplication), HttpStatus.OK);
 
 	}
 	
-	//Validating the admin
+	//Validating the user
 	@GetMapping("/validatingAdmin/{username}/{password}")
 	public ResponseEntity<Boolean> isValidAdmin(@PathVariable String username,@PathVariable String password) {
 		return new ResponseEntity<Boolean>(adminService.isValidAdmin(username, password),HttpStatus.OK);
 	}
 	
-	
+		
 
 }

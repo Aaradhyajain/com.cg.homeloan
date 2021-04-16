@@ -30,14 +30,15 @@ public class Customer extends User{
 	private String aadharNumber;
 	@Column
 	private String panNumber;
+	@Column
+	private int yearlySaving;
 
 	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber) {
+			String gender, String nationality, String aadharNumber, String panNumber, int yearlySaving) {
 		super(userId,username,password);
 		
 		this.customerName = customerName;
@@ -48,9 +49,18 @@ public class Customer extends User{
 		this.nationality = nationality;
 		this.aadharNumber = aadharNumber;
 		this.panNumber = panNumber;
+		this.yearlySaving=yearlySaving;
 	}
 
 	
+	public int getYearlySaving() {
+		return yearlySaving;
+	}
+
+	public void setYearlySaving(int yearlySaving) {
+		this.yearlySaving = yearlySaving;
+	}
+
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -117,9 +127,12 @@ public class Customer extends User{
 
 	@Override
 	public String toString() {
-		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
-				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
+				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality=" + nationality
+				+ ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + ", yearlySaving=" + yearlySaving
+				+ "]";
 	}
+
+	
 
 }
