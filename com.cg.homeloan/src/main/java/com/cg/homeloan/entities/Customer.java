@@ -1,18 +1,13 @@
 package com.cg.homeloan.entities;
 
 import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
-public class Customer extends User{
-	
+public class Customer extends User {
 
 	@Column
 	private String customerName;
@@ -36,10 +31,11 @@ public class Customer extends User{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber) {
-		super(userId,username,password);
-		
+	public Customer(int userId, String username, String password, String customerName, String mobileNumber,
+			String emailId, LocalDate dateOfBirth, String gender, String nationality, String aadharNumber,
+			String panNumber) {
+		super(userId, username, password);
+
 		this.customerName = customerName;
 		this.mobileNumber = mobileNumber;
 		this.emailId = emailId;
@@ -50,7 +46,6 @@ public class Customer extends User{
 		this.panNumber = panNumber;
 	}
 
-	
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -117,9 +112,9 @@ public class Customer extends User{
 
 	@Override
 	public String toString() {
-		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
-				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
+				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality=" + nationality
+				+ ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
 	}
 
 }

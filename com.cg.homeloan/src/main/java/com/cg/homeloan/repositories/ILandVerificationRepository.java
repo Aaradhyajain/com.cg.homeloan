@@ -9,5 +9,3 @@ public interface ILandVerificationRepository extends JpaRepository<LandVerificat
 	public LandVerificationOfficer findByUsernameAndPassword(String username, String password);
 
 }
-
-

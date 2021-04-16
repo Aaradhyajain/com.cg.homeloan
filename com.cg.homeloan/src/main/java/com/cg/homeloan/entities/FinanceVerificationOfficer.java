@@ -2,9 +2,6 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +18,9 @@ public class FinanceVerificationOfficer extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public FinanceVerificationOfficer(int userId,String username,String password, String finOfficerName, String finOfficerContact) {
-		super(userId, username,password);
+	public FinanceVerificationOfficer(int userId, String username, String password, String finOfficerName,
+			String finOfficerContact) {
+		super(userId, username, password);
 		this.finOfficerName = finOfficerName;
 		this.finOfficerContact = finOfficerContact;
 	}
@@ -45,8 +43,8 @@ public class FinanceVerificationOfficer extends User {
 
 	@Override
 	public String toString() {
-		return "FinanceVerificationOfficer [finOfficerName=" + finOfficerName
-				+ ", finOfficerContact=" + finOfficerContact + "]";
+		return "FinanceVerificationOfficer [finOfficerName=" + finOfficerName + ", finOfficerContact="
+				+ finOfficerContact + "]";
 	}
 
 }

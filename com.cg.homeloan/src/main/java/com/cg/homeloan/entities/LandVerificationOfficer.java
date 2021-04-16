@@ -2,15 +2,12 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "land_officer")
 public class LandVerificationOfficer extends User {
-	
+
 	@Column
 	private String officerName;
 	@Column
@@ -21,8 +18,9 @@ public class LandVerificationOfficer extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LandVerificationOfficer(int userId,String username,String password, String officerName, String officerContact) {
-		super(userId,username,password);
+	public LandVerificationOfficer(int userId, String username, String password, String officerName,
+			String officerContact) {
+		super(userId, username, password);
 		this.officerName = officerName;
 		this.officerContact = officerContact;
 	}
@@ -45,8 +43,7 @@ public class LandVerificationOfficer extends User {
 
 	@Override
 	public String toString() {
-		return "LandVerificationOfficer [officerName=" + officerName + ", officerContact="
-				+ officerContact + "]";
+		return "LandVerificationOfficer [officerName=" + officerName + ", officerContact=" + officerContact + "]";
 	}
 
 }

@@ -9,7 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,21 +21,21 @@ public class LoanApplication {
 	@Column
 	private LocalDate applicationDate;
 	@OneToOne
-	//@JoinColumn(name = "applicationId")
+	// @JoinColumn(name = "applicationId")
 	private Customer customer;
 	@Column
 	private double loanAppliedAmount;
 	@Column
 	private double loanApprovedAmount;
-	@Column(updatable=false)
+	@Column(updatable = false)
 	private boolean landVerificationApproval = false;
-	@Column(updatable=false)
+	@Column(updatable = false)
 	private boolean financeVerificationApproval = false;
-	@Column(updatable=false)
+	@Column(updatable = false)
 	private boolean adminApproval = false;
-	@Column(updatable=false)
+	@Column(updatable = false)
 	@Enumerated(EnumType.STRING)
-	private Status status=Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
+	private Status status = Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
 
 	public LoanApplication() {
 		super();
@@ -56,6 +55,19 @@ public class LoanApplication {
 		this.financeVerificationApproval = financeVerificationApproval;
 		this.adminApproval = adminApproval;
 		this.status = status;
+	}
+
+	public LoanApplication(long applicationId, LocalDate applicationDate) {
+		super();
+		this.applicationId = applicationId;
+		this.applicationDate = applicationDate;
+	}
+
+	public LoanApplication(long applicationId, double loanAppliedAmount, double loanApprovedAmount) {
+		super();
+		this.applicationId = applicationId;
+		this.loanAppliedAmount = loanAppliedAmount;
+		this.loanApprovedAmount = loanApprovedAmount;
 	}
 
 	public long getApplicationId() {

@@ -20,13 +20,12 @@ public class User {
 	private String username;
 	@Column
 	private String password;
-	
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public User(String username, String password) {
 		super();
 		this.username = username;
@@ -63,7 +62,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 	@Override
 	public String toString() {

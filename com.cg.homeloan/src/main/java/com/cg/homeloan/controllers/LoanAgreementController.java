@@ -3,9 +3,7 @@ package com.cg.homeloan.controllers;
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.services.LoanAgreementService;
-
 import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,24 +28,30 @@ public class LoanAgreementController {
 		return new ResponseEntity<List<LoanAgreement>>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
 	}
 
-	@GetMapping("/LoanAgreement/{loanAgreementId}") public
-	ResponseEntity<LoanAgreement> getLoanAgreement(@PathVariable("loanAgreementId") int loanApplicationId) throws LoanAgreementNotFoundException { 
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.getLoanAgreement(loanApplicationId), HttpStatus.OK);
+	@GetMapping("/LoanAgreement/{loanAgreementId}")
+	public ResponseEntity<LoanAgreement> getLoanAgreement(@PathVariable("loanAgreementId") int loanApplicationId)
+			throws LoanAgreementNotFoundException {
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.getLoanAgreement(loanApplicationId),
+				HttpStatus.OK);
 	}
-	
+
 	@PostMapping("/addLoanAgreement")
 	public ResponseEntity<LoanAgreement> addLoanAgreement(@RequestBody LoanAgreement loanAgreement) {
 		return new ResponseEntity<LoanAgreement>(loanAgreementService.addLoanAgreement(loanAgreement), HttpStatus.OK);
 	}
 
 	@PutMapping("/updateLoanAgreement")
-	public ResponseEntity<LoanAgreement> updateLoanAgreement(@PathVariable int loanAgreementId,@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
+	public ResponseEntity<LoanAgreement> updateLoanAgreement(@PathVariable int loanAgreementId,
+			@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
+		return new ResponseEntity<LoanAgreement>(
+				loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deleteLoanAgreement/{loanAgreementId}")
-	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId) throws LoanAgreementNotFoundException {
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
+	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId)
+			throws LoanAgreementNotFoundException {
+		return new ResponseEntity<LoanAgreement>(loanAgreementService.deleteLoanAgreement(loanAgreementId),
+				HttpStatus.OK);
 	}
 
 }

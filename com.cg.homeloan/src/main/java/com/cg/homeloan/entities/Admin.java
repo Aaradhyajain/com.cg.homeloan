@@ -2,9 +2,6 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -21,13 +18,13 @@ public class Admin extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Admin(String adminContact,String adminName,String password,int userId, String username) {
-		super(userId,username,password);
+	public Admin(String adminContact, String adminName, String password, int userId, String username) {
+		super(userId, username, password);
 		this.adminName = adminName;
 		this.adminContact = adminContact;
 	}
-
 	
+
 	public String getAdminName() {
 		return adminName;
 	}

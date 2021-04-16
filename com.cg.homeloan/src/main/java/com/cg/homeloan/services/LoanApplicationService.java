@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.entities.Status;
+import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
 import com.cg.homeloan.repositories.ILoanApplicationRepository;
 
@@ -28,7 +30,7 @@ public class LoanApplicationService implements ILoanApplicationService {
 
 	@Override
 	public LoanApplication deleteLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundExcption {
-		LoanApplication loanApplication =loanapplicationRepository.findById(loanApplicationId)
+		LoanApplication loanApplication = loanapplicationRepository.findById(loanApplicationId)
 				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
 		loanapplicationRepository.deleteById(loanApplicationId);
 		return loanApplication;
@@ -43,6 +45,18 @@ public class LoanApplicationService implements ILoanApplicationService {
 	public LoanApplication retrieveLoanApplicationById(int loanApplicationId) throws LoanApplicationNotFoundExcption {
 		return loanapplicationRepository.findById(loanApplicationId)
 				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
+	}
+	
+	@Override
+	public LoanApplication updateStatus(LoanApplication loanApplication) throws AdminApprovalException {
+		if (loanApplication.getStatus() == Status.PENDING && loanApplication.isLandVerificationApproval() == true
+				&& loanApplication.isFinanceVerificationApproval() == true) {
+			loanApplication.setAdminApproval(true);
+			loanApplication.setStatus(Status.APPROVED);
+			return loanapplicationRepository.save(loanApplication);
+
+		} else
+			throw new AdminApprovalException("Something went wrong");
 	}
 
 }
