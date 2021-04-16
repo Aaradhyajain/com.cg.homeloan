@@ -28,12 +28,12 @@ public class AdminService implements IAdminService {
 	}
 
 	// getting a specific record by using the method findById() of CrudRepository
-	public Admin viewAdmin(int userId) {
+	public Admin getAdmin(int userId) {
 		return iAdminRepository.findById(userId).get();
 	}
 
 	// getting all Employee record by using the method findaAll() of CrudRepository
-	public List<Admin> viewAllAdmin() {
+	public List<Admin> getAllAdmin() {
 		List<Admin> admin = new ArrayList<Admin>();
 		admin = iAdminRepository.findAll();
 		return admin;

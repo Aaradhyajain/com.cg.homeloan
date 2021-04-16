@@ -36,6 +36,12 @@ public class LoanAgreement {
 		this.emi = emi;
 	}
 
+	public LoanAgreement(long loanAgreementId, long loanApplicationId) {
+		super();
+		this.loanAgreementId = loanAgreementId;
+		this.loanApplicationId = loanApplicationId;
+	}
+
 	public long getLoanAgreementId() {
 		return loanAgreementId;
 	}

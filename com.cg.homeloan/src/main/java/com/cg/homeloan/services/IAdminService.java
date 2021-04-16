@@ -9,8 +9,8 @@ import com.cg.homeloan.exceptions.AdminApprovalException;
 public interface IAdminService {
 
 	public Admin addAdmin(Admin admin); 
-	public Admin viewAdmin(int userId);
-	public List<Admin> viewAllAdmin();
+	public Admin getAdmin(int userId);
+	public List<Admin> getAllAdmin();
 	public LoanApplication updateStatus(LoanApplication loanApplication) throws AdminApprovalException;
 	//public Admin validateAdmin(Admin admin);
 	public Boolean isValidAdmin(String username, String password);
