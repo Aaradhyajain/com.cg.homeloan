@@ -3,6 +3,7 @@ package com.cg.homeloan.services;
 import java.util.List;
 
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.entities.Status;
 import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.FinanceVerificationException;
@@ -20,6 +21,7 @@ public interface ILoanApplicationService  {
 	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException,LoanApplicationNotFoundExcption;
 	public LoanApplication updateFinanceStatus(int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundExcption;
 	public LoanApplication updateAdminStatus(int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundExcption;
+	public Status checkStatus(int loanApplicationId)throws LoanApplicationNotFoundExcption;
 	
 
 }

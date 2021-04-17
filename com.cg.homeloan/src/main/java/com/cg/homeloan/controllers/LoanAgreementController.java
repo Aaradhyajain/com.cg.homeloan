@@ -25,7 +25,7 @@ public class LoanAgreementController {
 	@Autowired
 	LoanAgreementService loanAgreementService;
 
-	@GetMapping("/AllLoanAgreement")
+	@GetMapping("/LoanAgreements")
 	public ResponseEntity<List<LoanAgreement>> getAllAgreementList() {
 		return new ResponseEntity<>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
 	}

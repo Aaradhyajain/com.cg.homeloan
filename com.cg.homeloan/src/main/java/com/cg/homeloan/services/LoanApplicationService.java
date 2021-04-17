@@ -45,18 +45,22 @@ public class LoanApplicationService implements ILoanApplicationService {
 		loanApplicationRepository.deleteById(loanApplicationId);
 		return loanApplication;
 	}
-
-	@Override
-	public List<LoanApplication> getAllLoanApplication() {
-		return loanApplicationRepository.findAll();
-	}
-
+	
 	@Override
 	public LoanApplication getLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundExcption {
 		return loanApplicationRepository.findById(loanApplicationId)
 				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
 	}
 	
+	@Override
+	public List<LoanApplication> getAllLoanApplication() {
+		return loanApplicationRepository.findAll();
+	}
+	
+	@Override
+	public Status checkStatus(int loanApplicationId) throws LoanApplicationNotFoundExcption {
+		return getLoanApplication(loanApplicationId).getStatus();
+	}
 	@Override
 	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption{
 		LoanApplication loanApplication = getLoanApplication(loanApplicationId);

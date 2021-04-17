@@ -107,7 +107,7 @@ class AdminServiceTest {
 
 	@Test
 	@DisplayName("Positive Test case for Validate Admin")
-	void testValidAdminPositive() {
+	public void testValidAdminPositive() {
 		Admin expected = new Admin("1234567890", "admin", "12345", 1, "admin@123");
 		when(adminRepository.findByUsernameAndPassword("admin@123", "12345")).thenReturn(expected);
 		boolean val = adminService.isValidAdmin("admin@123", "12345");
@@ -116,7 +116,7 @@ class AdminServiceTest {
 
 	@Test
 	@DisplayName("Negative Test case for Validate Admin")
-	void testValidAdminNegative() {
+	public void testValidAdminNegative() {
 		Admin expected = new Admin("1234567890", "admin", "12345", 1, "admin@123");
 		when(adminRepository.findByUsernameAndPassword("admin@123", "12345")).thenReturn(expected);
 		boolean val = adminService.isValidAdmin("admin@123", "12345");

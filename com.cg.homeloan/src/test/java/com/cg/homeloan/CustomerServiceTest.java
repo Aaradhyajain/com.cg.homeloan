@@ -106,6 +106,22 @@ class CustomerServiceTest {
 		when(customerRepository.findAll()).thenReturn(list);
 		assertNotEquals(3, customerService.getAllCustomers().size());
 	}
+	
+	@Test
+	@DisplayName("Positive Test case for Validate Customer")
+	public void testValidAdminPositive() {
+		when(customerRepository.findByUsernameAndPassword("sita", "1234")).thenReturn(customer);
+		boolean val = customerService.isValidCustomer("sita", "1234");
+		assertEquals(val, true);
+	}
+
+	@Test
+	@DisplayName("Negative Test case for Validate Customer")
+	public void testValidAdminNegative() {
+		when(customerRepository.findByUsernameAndPassword("sita", "1234")).thenReturn(customer);
+		boolean val = customerService.isValidCustomer("sita", "1234");
+		assertNotEquals(val, false);
+	}
 
 	@Test
 	@DisplayName("positive update customer")

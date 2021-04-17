@@ -3,6 +3,10 @@ package com.cg.homeloan;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,7 +25,7 @@ class FinanceVerificationServiceTest {
 	}
 
 	@Autowired
-	IFinanceVerificationService financeVerificationService;
+	IFinanceVerificationService finaceVerificationService;
 
 	@MockBean
 	IFinanceVerificationRepository financeVerificationRepository;
@@ -46,5 +50,21 @@ class FinanceVerificationServiceTest {
 //		assertEquals(loan, finaceVerificationService.updateStatus(loan));
 //		verify(financeVerificationService).updateStatus(loan);
 //
+	}
+	
+	@Test
+	@DisplayName("Positive Test case for Validate FinanceVerificationOfficer")
+	public void testValidAdminPositive() {
+		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
+		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "12345");
+		assertEquals(val, true);
+	}
+
+	@Test
+	@DisplayName("Negative Test case for Validate FinanceVerificationOfficers")
+	public void testValidAdminNegative() {
+		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
+		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "12345");
+		assertNotEquals(val, false);
 	}
 }

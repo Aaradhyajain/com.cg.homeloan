@@ -1,5 +1,7 @@
 package com.cg.homeloan.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,7 @@ import com.cg.homeloan.services.ILoanApplicationService;
 import com.cg.homeloan.services.LandVerificationService;
 
 @RestController
-@RequestMapping("/homeloan")
+@RequestMapping("/homeloan/landOfficer")
 public class LandVerificationOfficerController {
 
 	@Autowired
@@ -25,7 +27,11 @@ public class LandVerificationOfficerController {
 	@Autowired
 	ILoanApplicationService loanApplicationService;
 
-
+	@GetMapping("/LoanApplications")
+	public ResponseEntity<List<LoanApplication>> getAllLoanApplications() {
+		return new ResponseEntity<>(loanApplicationService.getAllLoanApplication(), HttpStatus.OK);
+	}
+	
 	@PutMapping("/updateLandVerificationStatus/{loanApplicationId}")
 	public ResponseEntity<LoanApplication> updateLandStatus(@PathVariable int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption {
 		return new ResponseEntity<>(loanApplicationService.updateLandStatus(loanApplicationId), HttpStatus.OK);
