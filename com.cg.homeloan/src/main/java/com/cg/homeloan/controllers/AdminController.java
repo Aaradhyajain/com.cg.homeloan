@@ -18,15 +18,18 @@ import com.cg.homeloan.entities.Admin;
 import com.cg.homeloan.entities.Customer;
 import com.cg.homeloan.entities.FinanceVerificationOfficer;
 import com.cg.homeloan.entities.LandVerificationOfficer;
+import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
+import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
 import com.cg.homeloan.services.CustomerService;
 import com.cg.homeloan.services.IAdminService;
 import com.cg.homeloan.services.IFinanceVerificationService;
 import com.cg.homeloan.services.ILandVerificationService;
 import com.cg.homeloan.services.ILoanApplicationService;
+import com.cg.homeloan.services.LoanAgreementService;
 
 @RestController
 @RequestMapping("/homeloan/admin")
@@ -46,6 +49,9 @@ public class AdminController {
 	
 	@Autowired
 	ILoanApplicationService loanApplicationService;
+	
+	@Autowired
+	LoanAgreementService loanAgreementService;
 	
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin) {
@@ -82,10 +88,25 @@ public class AdminController {
 		return new ResponseEntity<>(loanApplicationService.getAllLoanApplication(), HttpStatus.OK);
 	}
 	
+	@GetMapping("/LoanAgreements")
+	public ResponseEntity<List<LoanAgreement>> getAllAgreementList() {
+		return new ResponseEntity<>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
+	}
+	
 	@PutMapping("/updateAdminVerificationStatus/{loanApplicationId}")
 	public ResponseEntity<LoanApplication> updateAdminStatus(@PathVariable int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundExcption {
 		return new ResponseEntity<>(loanApplicationService.updateAdminStatus(loanApplicationId), HttpStatus.OK);
 
+	}
+	
+	@PutMapping("/updateLoanApplication")
+	public ResponseEntity<LoanApplication> updateLoanApplication(@PathVariable int loanApplicationId, @RequestBody LoanApplication loanApplication) throws LoanApplicationNotFoundExcption {
+		return new ResponseEntity<>(loanApplicationService.updateLoanApplication(loanApplicationId,loanApplication), HttpStatus.OK);
+	}
+	
+	@PutMapping("/updateLoanAgreement")
+	public ResponseEntity<LoanAgreement> updateLoanAgreement(@PathVariable int loanAgreementId,@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
+		return new ResponseEntity<>(loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
 	}
 	
 	//Validating the user
@@ -97,6 +118,16 @@ public class AdminController {
 	@DeleteMapping("/deleteCustomer/{userId}")
 	public ResponseEntity<Customer> deleteCustomer(@PathVariable int userId) throws CustomerNotFoundException{
 		return new ResponseEntity<>(customerService.deleteCustomer(userId),HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/deleteLoanApplication/{loanApplicationId}")
+	public ResponseEntity<LoanApplication> deleteLoanApplication(@PathVariable int loanApplicationId) throws LoanApplicationNotFoundExcption {
+		return new ResponseEntity<>(loanApplicationService.deleteLoanApplication(loanApplicationId), HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/deleteLoanAgreement/{loanAgreementId}")
+	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId) throws LoanAgreementNotFoundException {
+		return new ResponseEntity<>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
 	}
 	
 }

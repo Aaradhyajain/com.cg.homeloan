@@ -24,22 +24,18 @@ public class EMI {
 	private double loanAmount;
 	@Column
 	private double interestAmount;
-	@Column
-	private long loanAgreementId;
 
 	public EMI() {
 		super();
 	}
 
-	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,
-			long loanAgreementId) {
+	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount) {
 		super();
 		EMIId = eMIId;
 		this.dueDate = dueDate;
 		this.emiAmount = emiAmount;
 		this.loanAmount = loanAmount;
 		this.interestAmount = interestAmount;
-		this.loanAgreementId = loanAgreementId;
 	}
 
 	public long getEMIId() {
@@ -82,18 +78,10 @@ public class EMI {
 		this.interestAmount = interestAmount;
 	}
 
-	public long getLoanAgreementId() {
-		return loanAgreementId;
-	}
-
-	public void setLoanAgreementId(long loanAgreementId) {
-		this.loanAgreementId = loanAgreementId;
-	}
-
 	@Override
 	public String toString() {
 		return "EMI [EMIId=" + EMIId + ", dueDate=" + dueDate + ", emiAmount=" + emiAmount + ", loanAmount="
-				+ loanAmount + ", interestAmount=" + interestAmount + ", loanAgreementId=" + loanAgreementId + "]";
+				+ loanAmount + ", interestAmount=" + interestAmount + "]";
 	}
 
 }

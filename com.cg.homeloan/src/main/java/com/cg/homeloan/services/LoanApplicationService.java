@@ -5,12 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.homeloan.entities.Customer;
+import com.cg.homeloan.entities.EMI;
+import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.entities.Status;
 import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.FinanceVerificationException;
 import com.cg.homeloan.exceptions.LandVerificationException;
+import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
 import com.cg.homeloan.repositories.ICustomerRepository;
 import com.cg.homeloan.repositories.ILoanApplicationRepository;
@@ -20,13 +23,20 @@ public class LoanApplicationService implements ILoanApplicationService {
 
 	@Autowired
 	ILoanApplicationRepository loanApplicationRepository;
+	
 	@Autowired
 	ICustomerRepository customerRepository;
+	
+	@Autowired
+	IEmiService emiService;
+	
+	@Autowired
+	ILoanAgreementService loanAgreementService;
 
 	@Override
-	public LoanApplication addLoanApplication(int userId, double loanAppliedAmount) throws CustomerNotFoundException {
+	public LoanApplication addLoanApplication(int userId, double loanAppliedAmount,int loanTenureYears) throws CustomerNotFoundException {
 		Customer customer = customerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
-		LoanApplication loanApplication = new LoanApplication(customer,loanAppliedAmount);
+		LoanApplication loanApplication = new LoanApplication(customer,loanAppliedAmount,loanTenureYears);
 				return loanApplicationRepository.save(loanApplication);
 	}
 
@@ -58,8 +68,8 @@ public class LoanApplicationService implements ILoanApplicationService {
 	}
 	
 	@Override
-	public Status checkStatus(int loanApplicationId) throws LoanApplicationNotFoundExcption {
-		return getLoanApplication(loanApplicationId).getStatus();
+	public LoanAgreement checkStatus(int loanApplicationId) throws LoanAgreementNotFoundException {
+		return loanAgreementService.getLoanAgreement(loanApplicationId);
 	}
 	@Override
 	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption{
@@ -102,7 +112,12 @@ public class LoanApplicationService implements ILoanApplicationService {
 				&& loanApplication.isFinanceVerificationApproval()) {
 			loanApplication.setAdminApproval(true);
 			loanApplication.setStatus(Status.APPROVED);
-			loanApplication.setLoanApprovedAmount(loanApplication.getLoanAppliedAmount());
+			
+			EMI emi=emiService.addEmiDetails(loanApplication.getLoanAppliedAmount(), 10 , loanApplication.getLoanTenureYears());
+			loanApplication.setLoanApprovedAmount(emi.getLoanAmount());
+			
+			loanAgreementService.addLoanAgreement(loanApplicationId, emi);
+			
 			return loanApplicationRepository.save(loanApplication);
 
 		} else 

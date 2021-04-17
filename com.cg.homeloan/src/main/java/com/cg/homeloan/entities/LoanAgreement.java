@@ -32,6 +32,12 @@ public class LoanAgreement {
 		this.loanApplicationId = loanApplicationId;
 		this.emi = emi;
 	}
+	
+	public LoanAgreement(int loanApplicationId, EMI emi) {
+		super();
+		this.loanApplicationId = loanApplicationId;
+		this.emi = emi;
+	}
 
 	public long getLoanAgreementId() {
 		return loanAgreementId;
