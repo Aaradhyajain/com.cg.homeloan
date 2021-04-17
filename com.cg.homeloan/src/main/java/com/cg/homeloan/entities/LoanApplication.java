@@ -25,6 +25,8 @@ public class LoanApplication {
 	@Column
 	private double loanAppliedAmount;
 	@Column
+	private int loanTenureYears;
+	@Column
 	private double loanApprovedAmount;
 	@Column
 	private boolean landVerificationApproval;
@@ -39,27 +41,31 @@ public class LoanApplication {
 	public LoanApplication() {
 		super();
 	}
-
+	
 	public LoanApplication(int applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
-			double loanApprovedAmount, boolean landVerificationApproval, boolean financeVerificationApproval,
-			boolean adminApproval, Status status) {
+			int loanTenureYears, double loanApprovedAmount, boolean landVerificationApproval,
+			boolean financeVerificationApproval, boolean adminApproval, Status status) {
 		super();
 		this.applicationId = applicationId;
 		this.applicationDate = applicationDate;
 		this.customer = customer;
 		this.loanAppliedAmount = loanAppliedAmount;
+		this.loanTenureYears = loanTenureYears;
 		this.loanApprovedAmount = loanApprovedAmount;
 		this.landVerificationApproval = landVerificationApproval;
 		this.financeVerificationApproval = financeVerificationApproval;
 		this.adminApproval = adminApproval;
 		this.status = status;
 	}
-	
-	public LoanApplication(Customer customer, double loanAppliedAmount) {
+
+
+
+	public LoanApplication(Customer customer, double loanAppliedAmount, int loanTenureYears) {
 		super();
 		this.customer = customer;
 		this.loanAppliedAmount = loanAppliedAmount;
 		this.applicationDate=LocalDate.now();
+		this.loanTenureYears=loanTenureYears;
 		this.landVerificationApproval = false;
 		this.financeVerificationApproval = false;
 		this.adminApproval=false;
@@ -96,6 +102,14 @@ public class LoanApplication {
 
 	public void setLoanAppliedAmount(double loanAppliedAmount) {
 		this.loanAppliedAmount = loanAppliedAmount;
+	}
+
+	public int getLoanTenureYears() {
+		return loanTenureYears;
+	}
+
+	public void setLoanTenureYears(int loanTenureYears) {
+		this.loanTenureYears = loanTenureYears;
 	}
 
 	public double getLoanApprovedAmount() {

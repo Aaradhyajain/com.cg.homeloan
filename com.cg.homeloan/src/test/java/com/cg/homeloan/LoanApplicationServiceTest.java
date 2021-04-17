@@ -40,7 +40,7 @@ class LoanApplicationServiceTest {
 		customer.setUsername("Sita");
 		customer.setPassword("1234");
 		
-		loanApplication = new LoanApplication(customer,120000);
+		loanApplication = new LoanApplication(customer,1200000,10);
 		loanApplication.setApplicationId(3);
 //		loanApplication.setCustomer(customer);
 //		loanApplication.setLoanAppliedAmount(120000);
@@ -62,6 +62,7 @@ class LoanApplicationServiceTest {
 		loanApplication1.setApplicationId(4);
 		loanApplication1.setCustomer(customer1);
 		loanApplication1.setLoanAppliedAmount(100000);
+		loanApplication1.setLoanTenureYears(10);
 		
 
 	}
@@ -77,26 +78,26 @@ class LoanApplicationServiceTest {
 	void testAddLoanApplicationPositive() throws Exception {
 		
 		when(loanApplicationRepository.save(loanApplication)).thenReturn(loanApplication);
-		assertEquals(loanApplication, loanApplicationService.addLoanApplication(1,120000));
+		assertEquals(loanApplication, loanApplicationService.addLoanApplication(1,1200000,10));
 	}
 
 	@Test
 	@DisplayName("negative test case of add loanapplication")
 	void testAddLoanApplicationNegative() throws Exception {
 		when(loanApplicationRepository.save(loanApplication)).thenReturn(loanApplication);
-		assertNotEquals(loanApplication1, loanApplicationService.addLoanApplication(1,120000));
+		assertNotEquals(loanApplication1, loanApplicationService.addLoanApplication(1,1200000,10));
 	}
 
 	@Test
 	void testUpdateLoanApplicationPositive() throws Exception {
-		obj = new LoanApplication(customer,120000);
+		obj = new LoanApplication(customer,1200000,10);
 		when(loanApplicationRepository.save(obj)).thenReturn(obj);
 		assertEquals(obj, loanApplicationService.updateLoanApplication(1, obj));
 	}
 
 	@Test
 	void testUpdateLoanApplicationNegative() throws Exception {
-		LoanApplication obj = new LoanApplication(customer1, 100000);
+		LoanApplication obj = new LoanApplication(customer1, 1000000,10);
 		when(loanApplicationRepository.findById(1)).thenReturn(Optional.of(obj));
 		assertNotEquals(obj, loanApplicationService.updateLoanApplication(1, obj));
 	}
