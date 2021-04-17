@@ -2,9 +2,6 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +15,6 @@ public class FinanceVerificationOfficer extends User {
 
 	public FinanceVerificationOfficer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public FinanceVerificationOfficer(int userId,String username,String password, String finOfficerName, String finOfficerContact) {

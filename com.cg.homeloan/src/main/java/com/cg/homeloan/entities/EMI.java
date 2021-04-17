@@ -29,7 +29,6 @@ public class EMI {
 
 	public EMI() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public EMI(long eMIId, LocalDate dueDate, double emiAmount, double loanAmount, double interestAmount,

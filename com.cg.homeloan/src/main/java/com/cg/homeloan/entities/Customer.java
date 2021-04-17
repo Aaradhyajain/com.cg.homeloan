@@ -4,16 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
 public class Customer extends User{
 	
-
 	@Column
 	private String customerName;
 	@Column
@@ -33,7 +29,6 @@ public class Customer extends User{
 
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,

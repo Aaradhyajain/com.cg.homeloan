@@ -6,12 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.LandVerificationException;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
+import com.cg.homeloan.services.ILoanApplicationService;
 import com.cg.homeloan.services.LandVerificationService;
 
 @RestController
@@ -20,18 +21,21 @@ public class LandVerificationOfficerController {
 
 	@Autowired
 	LandVerificationService landVerificationService;
+	
+	@Autowired
+	ILoanApplicationService loanApplicationService;
 
 
-	@PutMapping("/updateLandVerificationStatus")
-	public ResponseEntity<LoanApplication> updateLandStatus(@RequestBody LoanApplication loanApplication) throws LandVerificationException {
-		return new ResponseEntity<LoanApplication>(landVerificationService.updateStatus(loanApplication), HttpStatus.OK);
+	@PutMapping("/updateLandVerificationStatus/{loanApplicationId}")
+	public ResponseEntity<LoanApplication> updateLandStatus(@PathVariable int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption {
+		return new ResponseEntity<>(loanApplicationService.updateLandStatus(loanApplicationId), HttpStatus.OK);
 
 	}
 	
 	//Validating the user	
 	@GetMapping("/validatingLandOfficer/{username}/{password}")
 	public ResponseEntity<Boolean> isValidLandOfficer(@PathVariable String username,@PathVariable String password) {
-		return new ResponseEntity<Boolean>(landVerificationService.isValidLandOfficer(username, password),HttpStatus.OK);
+		return new ResponseEntity<>(landVerificationService.isValidLandOfficer(username, password),HttpStatus.OK);
 	}
 
 }

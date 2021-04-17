@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -15,21 +14,19 @@ public class LoanAgreement {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long loanAgreementId;
+	private int loanAgreementId;
 
 	@Column
-	private long loanApplicationId;
+	private int loanApplicationId;
 
 	@OneToOne
-	//@JoinColumn(name = "loanAgreementId")
 	private EMI emi;
 
 	public LoanAgreement() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public LoanAgreement(long loanAgreementId, long loanApplicationId, EMI emi) {
+	public LoanAgreement(int loanAgreementId, int loanApplicationId, EMI emi) {
 		super();
 		this.loanAgreementId = loanAgreementId;
 		this.loanApplicationId = loanApplicationId;
@@ -40,7 +37,7 @@ public class LoanAgreement {
 		return loanAgreementId;
 	}
 
-	public void setLoanAgreementId(long loanAgreementId) {
+	public void setLoanAgreementId(int loanAgreementId) {
 		this.loanAgreementId = loanAgreementId;
 	}
 
@@ -48,7 +45,7 @@ public class LoanAgreement {
 		return loanApplicationId;
 	}
 
-	public void setLoanApplicationId(long loanApplicationId) {
+	public void setLoanApplicationId(int loanApplicationId) {
 		this.loanApplicationId = loanApplicationId;
 	}
 
