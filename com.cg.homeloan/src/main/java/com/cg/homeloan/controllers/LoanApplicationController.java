@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
 import com.cg.homeloan.services.ILoanApplicationService;
 
@@ -25,27 +26,27 @@ public class LoanApplicationController {
 
 	@GetMapping("/LoanApplications")
 	public ResponseEntity<List<LoanApplication>> getAllLoanApplications() {
-		return new ResponseEntity<List<LoanApplication>>(loanapplicationservice.retrieveAllLoanApplication(), HttpStatus.OK);
+		return new ResponseEntity<>(loanapplicationservice.getAllLoanApplication(), HttpStatus.OK);
 	}
 
 	@GetMapping("/LoanApplication/{loanApplicationId}")
 	public ResponseEntity<LoanApplication> getLoanApplication(@PathVariable("loanApplicationId") int loanApplicationId) throws LoanApplicationNotFoundExcption {
-		return new ResponseEntity<LoanApplication>(loanapplicationservice.retrieveLoanApplicationById(loanApplicationId), HttpStatus.FOUND);
+		return new ResponseEntity<>(loanapplicationservice.getLoanApplication(loanApplicationId), HttpStatus.FOUND);
 	}
 
-	@PostMapping("/addLoanApplication")
-	public ResponseEntity<LoanApplication> addLoanApplication(@RequestBody LoanApplication loanApplication) {
-		return new ResponseEntity<LoanApplication>(loanapplicationservice.addLoanApplication(loanApplication), HttpStatus.OK);
+	@PostMapping("/addLoanApplication/{userId}/{loanAppliedAmount}")
+	public ResponseEntity<LoanApplication> addLoanApplication(@PathVariable int userId, @PathVariable double loanAppliedAmount) throws CustomerNotFoundException {
+		return new ResponseEntity<>(loanapplicationservice.addLoanApplication(userId,loanAppliedAmount), HttpStatus.OK);
 	}
 
 	@PutMapping("/updateLoanApplication")
 	public ResponseEntity<LoanApplication> updateLoanApplication(@PathVariable int loanApplicationId, @RequestBody LoanApplication loanApplication) throws LoanApplicationNotFoundExcption {
-		return new ResponseEntity<LoanApplication>(loanapplicationservice.updateLoanApplication(loanApplicationId,loanApplication), HttpStatus.OK);
+		return new ResponseEntity<>(loanapplicationservice.updateLoanApplication(loanApplicationId,loanApplication), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deleteLoanApplication/{loanApplicationId}")
 	public ResponseEntity<LoanApplication> deleteLoanApplication(@PathVariable int loanApplicationId) throws LoanApplicationNotFoundExcption {
-		return new ResponseEntity<LoanApplication>(loanapplicationservice.deleteLoanApplication(loanApplicationId), HttpStatus.FOUND);
+		return new ResponseEntity<>(loanapplicationservice.deleteLoanApplication(loanApplicationId), HttpStatus.FOUND);
 	}
 
 }

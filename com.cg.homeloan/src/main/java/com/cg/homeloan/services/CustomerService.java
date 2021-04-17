@@ -1,6 +1,5 @@
 package com.cg.homeloan.services;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +21,12 @@ public class CustomerService implements ICustomerService {
 	}
 	
 	@Override
-	public Customer viewCustomer(int userId) throws CustomerNotFoundException { 
+	public Customer getCustomer(int userId) throws CustomerNotFoundException { 
 		return iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
 	}
 	
 	@Override
-	public List<Customer> viewAllCustomers(){
+	public List<Customer> getAllCustomers(){
 		return iCustomerRepository.findAll();
 	}
 	
@@ -39,8 +38,7 @@ public class CustomerService implements ICustomerService {
 	
 	@Override
 	public Customer deleteCustomer(int userId) throws CustomerNotFoundException {
-		Customer customer = viewCustomer(userId);//iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
-		
+		Customer customer = getCustomer(userId);
 		iCustomerRepository.deleteById(userId);
 		return customer;	
 	}
@@ -49,8 +47,4 @@ public class CustomerService implements ICustomerService {
 	public boolean isValidCustomer(String username, String password) {
 		return iCustomerRepository.findByUsernameAndPassword(username, password)!=null? true :false;
 	}
-	
-//	public List<Customer> viewCustomerList(LocalDate dateOfApplication);
-
-
 }

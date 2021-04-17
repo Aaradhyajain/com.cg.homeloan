@@ -9,10 +9,10 @@ public interface ILoanAgreementService{
 	
 	public LoanAgreement addLoanAgreement(LoanAgreement loanAgreement) ;
 		
-		public LoanAgreement updateLoanAgreement(long loanAgreementId, LoanAgreement loanAgreement) throws LoanAgreementNotFoundException;
-		public LoanAgreement deleteLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException;
+		public LoanAgreement updateLoanAgreement(int loanAgreementId, LoanAgreement loanAgreement) throws LoanAgreementNotFoundException;
+		public LoanAgreement deleteLoanAgreement(int loanAgreementId) throws LoanAgreementNotFoundException;
 		public List<LoanAgreement> getAllLoanAgreements();
-		public LoanAgreement getLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException;
+		public LoanAgreement getLoanAgreement(int loanAgreementId) throws LoanAgreementNotFoundException;
 		
 		
 

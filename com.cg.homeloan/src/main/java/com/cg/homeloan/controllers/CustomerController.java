@@ -27,27 +27,27 @@ public class CustomerController {
 	
 	@PostMapping("/addCustomer")
 	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
-		return new ResponseEntity<Customer>(customerService.addCustomer(customer),HttpStatus.OK);
+		return new ResponseEntity<>(customerService.addCustomer(customer),HttpStatus.OK);
 	}
 	
 	@GetMapping("/customer/{userId}")
 	public ResponseEntity<Customer> viewCustomer(@PathVariable("userId") int userId) throws CustomerNotFoundException {
-		return new ResponseEntity<Customer>(customerService.viewCustomer(userId),HttpStatus.FOUND);
+		return new ResponseEntity<>(customerService.getCustomer(userId),HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/customers")
 	public ResponseEntity<List<Customer>> viewAllCustomers(){
-		return new ResponseEntity<List<Customer>>(customerService.viewAllCustomers(),HttpStatus.OK);
+		return new ResponseEntity<>(customerService.getAllCustomers(),HttpStatus.OK);
 	}
 	
 	@PutMapping("/updateCustomer/{userId}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable int userId, @RequestBody Customer customer) throws CustomerNotFoundException {
-		return new ResponseEntity<Customer>(customerService.updateCustomer(userId,customer),HttpStatus.OK);
+		return new ResponseEntity<>(customerService.updateCustomer(userId,customer),HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/deleteCustomer/{userId}")
 	public ResponseEntity<Customer> deleteCustomer(@PathVariable int userId) throws CustomerNotFoundException{
-		return new ResponseEntity<Customer>(customerService.deleteCustomer(userId),HttpStatus.FOUND);
+		return new ResponseEntity<>(customerService.deleteCustomer(userId),HttpStatus.FOUND);
 	}
 	
 	//Validating the user

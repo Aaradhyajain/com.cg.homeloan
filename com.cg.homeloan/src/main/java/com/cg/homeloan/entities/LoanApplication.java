@@ -9,7 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,32 +17,30 @@ import javax.persistence.Table;
 public class LoanApplication {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long applicationId;
+	private int applicationId;
 	@Column
-	private LocalDate applicationDate;
+	private LocalDate applicationDate;  
 	@OneToOne
-	//@JoinColumn(name = "applicationId")
 	private Customer customer;
 	@Column
 	private double loanAppliedAmount;
 	@Column
 	private double loanApprovedAmount;
-	@Column(updatable=false)
-	private boolean landVerificationApproval = false;
-	@Column(updatable=false)
-	private boolean financeVerificationApproval = false;
-	@Column(updatable=false)
-	private boolean adminApproval = false;
-	@Column(updatable=false)
+	@Column
+	private boolean landVerificationApproval;
+	@Column
+	private boolean financeVerificationApproval;
+	@Column
+	private boolean adminApproval;
+	@Column
 	@Enumerated(EnumType.STRING)
-	private Status status=Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
+	private Status status;
 
 	public LoanApplication() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public LoanApplication(long applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
+	public LoanApplication(int applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
 			double loanApprovedAmount, boolean landVerificationApproval, boolean financeVerificationApproval,
 			boolean adminApproval, Status status) {
 		super();
@@ -57,12 +54,23 @@ public class LoanApplication {
 		this.adminApproval = adminApproval;
 		this.status = status;
 	}
+	
+	public LoanApplication(Customer customer, double loanAppliedAmount) {
+		super();
+		this.customer = customer;
+		this.loanAppliedAmount = loanAppliedAmount;
+		this.applicationDate=LocalDate.now();
+		this.landVerificationApproval = false;
+		this.financeVerificationApproval = false;
+		this.adminApproval=false;
+		this.status = Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
+	}
 
 	public long getApplicationId() {
 		return applicationId;
 	}
 
-	public void setApplicationId(long applicationId) {
+	public void setApplicationId(int applicationId) {
 		this.applicationId = applicationId;
 	}
 

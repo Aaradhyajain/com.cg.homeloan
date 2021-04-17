@@ -20,8 +20,7 @@ public class LoanAgreementService implements ILoanAgreementService{
 		return loanAgreementRepository.save(loanAgreement); 
 	}
 	@Override
-	public LoanAgreement getLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException {
-		// TODO Auto-generated method stub
+	public LoanAgreement getLoanAgreement(int loanAgreementId) throws LoanAgreementNotFoundException {
 		return loanAgreementRepository.findById(loanAgreementId).orElseThrow(() -> new LoanAgreementNotFoundException("Loan Agreement Not Found!"));
 	}
 	
@@ -31,14 +30,14 @@ public class LoanAgreementService implements ILoanAgreementService{
 	}
 	
 	@Override
-	public LoanAgreement deleteLoanAgreement(long loanAgreementId) throws LoanAgreementNotFoundException {
+	public LoanAgreement deleteLoanAgreement(int loanAgreementId) throws LoanAgreementNotFoundException {
 		LoanAgreement loanAgreement = getLoanAgreement(loanAgreementId);
 		loanAgreementRepository.deleteById(loanAgreementId);
 		return loanAgreement;
 	}
 	
 	@Override
-	public LoanAgreement updateLoanAgreement(long loanAgreementId, LoanAgreement loanAgreement)
+	public LoanAgreement updateLoanAgreement(int loanAgreementId, LoanAgreement loanAgreement)
 			throws LoanAgreementNotFoundException {
 		loanAgreementRepository.findById(loanAgreementId)
 				.orElseThrow(() -> new LoanAgreementNotFoundException("Loan Agreement Not Found!"));
