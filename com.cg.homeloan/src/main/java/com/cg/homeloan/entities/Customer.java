@@ -4,16 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
 public class Customer extends User{
 	
-
 	@Column
 	private String customerName;
 	@Column
@@ -30,15 +26,13 @@ public class Customer extends User{
 	private String aadharNumber;
 	@Column
 	private String panNumber;
-	@Column
-	private int yearlySaving;
 
 	public Customer() {
-		
+		super();
 	}
 
 	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber, int yearlySaving) {
+			String gender, String nationality, String aadharNumber, String panNumber) {
 		super(userId,username,password);
 		
 		this.customerName = customerName;
@@ -49,18 +43,9 @@ public class Customer extends User{
 		this.nationality = nationality;
 		this.aadharNumber = aadharNumber;
 		this.panNumber = panNumber;
-		this.yearlySaving=yearlySaving;
 	}
 
 	
-	public int getYearlySaving() {
-		return yearlySaving;
-	}
-
-	public void setYearlySaving(int yearlySaving) {
-		this.yearlySaving = yearlySaving;
-	}
-
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -127,12 +112,9 @@ public class Customer extends User{
 
 	@Override
 	public String toString() {
-		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
-				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality=" + nationality
-				+ ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + ", yearlySaving=" + yearlySaving
-				+ "]";
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
+				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
+				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
 	}
-
-	
 
 }

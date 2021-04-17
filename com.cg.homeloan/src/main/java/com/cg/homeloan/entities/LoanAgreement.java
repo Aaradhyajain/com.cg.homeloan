@@ -15,28 +15,37 @@ public class LoanAgreement {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long loanAgreementId;
+	private int loanAgreementId;
 
-	@Column
-	private long loanApplicationId;
+	//@Column
+	@OneToOne
+	@JoinColumn(name = "lAgreementID")
+	private LoanApplication loanApplicationId;
 
 	@OneToOne
-	//@JoinColumn(name = "loanAgreementId")
+//	@JoinColumn(name = "loanAgreementId")
 	private EMI emi;
 
 	public LoanAgreement() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public LoanAgreement(long loanAgreementId, long loanApplicationId, EMI emi) {
+	public LoanAgreement(int loanAgreementId, LoanApplication loanApplicationId, EMI emi) {
 		super();
 		this.loanAgreementId = loanAgreementId;
 		this.loanApplicationId = loanApplicationId;
 		this.emi = emi;
 	}
+	
+	
+	public LoanAgreement(LoanApplication loanApplicationId, EMI emi) {
+		super();
+		this.loanApplicationId = loanApplicationId;
+		this.emi = emi;
+	}
 
-	public LoanAgreement(long loanAgreementId, long loanApplicationId) {
+	public LoanAgreement(int loanAgreementId, LoanApplication loanApplicationId) {
 		super();
 		this.loanAgreementId = loanAgreementId;
 		this.loanApplicationId = loanApplicationId;
@@ -46,15 +55,15 @@ public class LoanAgreement {
 		return loanAgreementId;
 	}
 
-	public void setLoanAgreementId(long loanAgreementId) {
+	public void setLoanAgreementId(int loanAgreementId) {
 		this.loanAgreementId = loanAgreementId;
 	}
 
-	public long getLoanApplicationId() {
+	public LoanApplication getLoanApplicationId() {
 		return loanApplicationId;
 	}
 
-	public void setLoanApplicationId(long loanApplicationId) {
+	public void setLoanApplicationId(LoanApplication loanApplicationId) {
 		this.loanApplicationId = loanApplicationId;
 	}
 

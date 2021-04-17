@@ -26,28 +26,28 @@ public class LoanAgreementController {
 	LoanAgreementService loanAgreementService;
 
 	@GetMapping("/AllLoanAgreement")
-	private ResponseEntity<List<LoanAgreement>> getAllAgreementList() {
-		return new ResponseEntity<List<LoanAgreement>>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
+	public ResponseEntity<List<LoanAgreement>> getAllAgreementList() {
+		return new ResponseEntity<>(loanAgreementService.getAllLoanAgreements(), HttpStatus.OK);
 	}
 
 	@GetMapping("/LoanAgreement/{loanAgreementId}") public
 	ResponseEntity<LoanAgreement> getLoanAgreement(@PathVariable("loanAgreementId") int loanApplicationId) throws LoanAgreementNotFoundException { 
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.getLoanAgreement(loanApplicationId), HttpStatus.OK);
+		return new ResponseEntity<>(loanAgreementService.getLoanAgreement(loanApplicationId), HttpStatus.OK);
 	}
 	
 	@PostMapping("/addLoanAgreement")
-	public ResponseEntity<LoanAgreement> addLoanAgreement(@RequestBody LoanAgreement loanAgreement) {
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.addLoanAgreement(loanAgreement), HttpStatus.OK);
+	public ResponseEntity<LoanAgreement> addLoanAgreement(@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException{
+		return new ResponseEntity<>(loanAgreementService.addLoanAgreement(loanAgreement), HttpStatus.OK);
 	}
 
 	@PutMapping("/updateLoanAgreement")
 	public ResponseEntity<LoanAgreement> updateLoanAgreement(@PathVariable int loanAgreementId,@RequestBody LoanAgreement loanAgreement) throws LoanAgreementNotFoundException {
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
+		return new ResponseEntity<>(loanAgreementService.updateLoanAgreement(loanAgreementId, loanAgreement), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deleteLoanAgreement/{loanAgreementId}")
 	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId) throws LoanAgreementNotFoundException {
-		return new ResponseEntity<LoanAgreement>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
+		return new ResponseEntity<>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
 	}
 
 }
