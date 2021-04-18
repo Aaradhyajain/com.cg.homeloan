@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.FinanceVerificationException;
-import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
 import com.cg.homeloan.services.FinanceVerificationService;
 import com.cg.homeloan.services.ILoanApplicationService;
 
@@ -33,7 +33,7 @@ public class FinanceVerificationOfficerController {
 	}
 	
 	@PutMapping("/updateFinanceVerificationStatus/{loanApplicationId}")
-	public ResponseEntity<LoanApplication> updateFinanceStatus(@PathVariable int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundExcption {
+	public ResponseEntity<LoanApplication> updateFinanceStatus(@PathVariable int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundException {
 		return new ResponseEntity<>(loanApplicationService.updateFinanceStatus(loanApplicationId), HttpStatus.OK);
 
 	}

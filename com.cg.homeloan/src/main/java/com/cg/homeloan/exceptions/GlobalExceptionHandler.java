@@ -42,8 +42,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<ErrorDetails>(details, HttpStatus.NOT_FOUND);	
 	}
 	
-	@ExceptionHandler(LoanApplicationNotFoundExcption.class)
-	public ResponseEntity<ErrorDetails> handleException(LoanApplicationNotFoundExcption exception, WebRequest request){
+	@ExceptionHandler(LoanApplicationNotFoundException.class)
+	public ResponseEntity<ErrorDetails> handleException(LoanApplicationNotFoundException exception, WebRequest request){
 		ErrorDetails details = new ErrorDetails(exception.getMessage(), LocalDate.now(), request.getDescription(false));
 		return new ResponseEntity<ErrorDetails>(details, HttpStatus.NOT_FOUND);	
 	}

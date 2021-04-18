@@ -1,0 +1,173 @@
+2021-04-19 00:08:07.967  WARN 12192 --- [http-nio-8095-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption: Loan Application Not Found!!!]
+2021-04-19 00:08:40.108  WARN 12192 --- [http-nio-8095-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.FinanceVerificationException: Something went wrong]
+2021-04-19 00:08:59.777  INFO 12192 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:08:59.782  INFO 12192 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:08:59.795  INFO 12192 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-19 00:08:59.846  INFO 12192 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-04-19 00:09:00.056  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Start Application
+2021-04-19 00:09:00.134  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 11.0.2 on DESKTOP-H3VN1C2 with PID 12192 (D:\Work\Workspace\com.cg.homeloan\bin\main started by Aaradhya_Jain in D:\Work\Workspace\com.cg.homeloan)
+2021-04-19 00:09:00.135  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
+2021-04-19 00:09:01.064  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 00:09:01.135  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 7 JPA repository interfaces.
+2021-04-19 00:09:01.482  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-19 00:09:01.484  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-19 00:09:01.485  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-19 00:09:01.563  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-19 00:09:01.563  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1419 ms
+2021-04-19 00:09:01.707  INFO 12192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 00:09:01.765  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-04-19 00:09:01.871  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-04-19 00:09:01.871  INFO 12192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-19 00:09:02.457  INFO 12192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 00:09:02.457  INFO 12192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:09:02.468  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-19 00:09:03.039  WARN 12192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 00:09:03.145  INFO 12192 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 00:09:03.224  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:09:03.349  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2021-04-19 00:09:03.353  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-19 00:09:03.354  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-19 00:09:03.363  INFO 12192 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-19 00:09:03.587  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_1
+2021-04-19 00:09:03.606  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_2
+2021-04-19 00:09:03.622  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 3.558 seconds (JVM running for 2049.884)
+2021-04-19 00:09:03.623  INFO 12192 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-19 00:10:56.493  INFO 12192 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:10:56.501  INFO 12192 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:10:56.504  INFO 12192 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-04-19 00:10:56.532  INFO 12192 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-04-19 00:10:56.647  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Start Application
+2021-04-19 00:10:56.794  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 11.0.2 on DESKTOP-H3VN1C2 with PID 12192 (D:\Work\Workspace\com.cg.homeloan\bin\main started by Aaradhya_Jain in D:\Work\Workspace\com.cg.homeloan)
+2021-04-19 00:10:56.794  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
+2021-04-19 00:10:57.477  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 00:10:57.522  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 7 JPA repository interfaces.
+2021-04-19 00:10:57.774  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-19 00:10:57.775  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-19 00:10:57.775  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-19 00:10:57.835  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-19 00:10:57.838  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1039 ms
+2021-04-19 00:10:57.907  INFO 12192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 00:10:57.922  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-04-19 00:10:57.952  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-04-19 00:10:57.953  INFO 12192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-19 00:10:58.319  INFO 12192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 00:10:58.320  INFO 12192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:10:58.332  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-19 00:10:58.825  WARN 12192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 00:10:58.905  INFO 12192 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 00:10:58.973  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:10:59.105  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2021-04-19 00:10:59.117  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-19 00:10:59.118  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-19 00:10:59.129  INFO 12192 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-19 00:10:59.285  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_1
+2021-04-19 00:10:59.308  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_2
+2021-04-19 00:10:59.327  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 2.666 seconds (JVM running for 2165.59)
+2021-04-19 00:10:59.331  INFO 12192 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-19 00:12:16.282  INFO 12192 --- [Thread-31] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:12:16.284  INFO 12192 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:12:16.286  INFO 12192 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-04-19 00:12:16.311  INFO 12192 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-04-19 00:12:16.388  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Start Application
+2021-04-19 00:12:16.433  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 11.0.2 on DESKTOP-H3VN1C2 with PID 12192 (D:\Work\Workspace\com.cg.homeloan\bin\main started by Aaradhya_Jain in D:\Work\Workspace\com.cg.homeloan)
+2021-04-19 00:12:16.434  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
+2021-04-19 00:12:16.978  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 00:12:17.018  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 7 JPA repository interfaces.
+2021-04-19 00:12:17.214  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-19 00:12:17.216  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-19 00:12:17.217  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-19 00:12:17.252  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-19 00:12:17.253  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 811 ms
+2021-04-19 00:12:17.296  INFO 12192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 00:12:17.305  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-04-19 00:12:17.330  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-04-19 00:12:17.330  INFO 12192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-19 00:12:17.609  INFO 12192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 00:12:17.610  INFO 12192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:12:17.621  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-19 00:12:18.035  WARN 12192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 00:12:18.099  INFO 12192 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 00:12:18.149  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:12:18.227  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2021-04-19 00:12:18.230  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-19 00:12:18.234  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-19 00:12:18.241  INFO 12192 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-19 00:12:18.361  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_1
+2021-04-19 00:12:18.366  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_2
+2021-04-19 00:12:18.386  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 1.993 seconds (JVM running for 2244.649)
+2021-04-19 00:12:18.388  INFO 12192 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-19 00:12:37.879  INFO 12192 --- [http-nio-8095-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-19 00:12:37.880  INFO 12192 --- [http-nio-8095-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-19 00:12:37.882  INFO 12192 --- [http-nio-8095-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-19 00:12:37.911  WARN 12192 --- [http-nio-8095-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.FinanceVerificationException: Waiting for Land Verification Approval !!!]
+2021-04-19 00:17:03.498  WARN 12192 --- [http-nio-8095-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption: Loan Application Not Found!!!]
+2021-04-19 00:20:42.253  INFO 12192 --- [Thread-37] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:20:42.255  INFO 12192 --- [Thread-37] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:20:42.257  INFO 12192 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-04-19 00:20:42.272  INFO 12192 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-04-19 00:20:42.375  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Start Application
+2021-04-19 00:20:42.507  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 11.0.2 on DESKTOP-H3VN1C2 with PID 12192 (D:\Work\Workspace\com.cg.homeloan\bin\main started by Aaradhya_Jain in D:\Work\Workspace\com.cg.homeloan)
+2021-04-19 00:20:42.507  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
+2021-04-19 00:20:43.247  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 00:20:43.298  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 7 JPA repository interfaces.
+2021-04-19 00:20:43.547  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-19 00:20:43.550  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-19 00:20:43.550  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-19 00:20:43.584  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-19 00:20:43.585  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1072 ms
+2021-04-19 00:20:43.646  INFO 12192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 00:20:43.659  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-04-19 00:20:43.703  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-04-19 00:20:43.704  INFO 12192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-19 00:20:44.164  INFO 12192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 00:20:44.164  INFO 12192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:20:44.179  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-19 00:20:44.653  WARN 12192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 00:20:44.728  INFO 12192 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 00:20:44.791  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:20:44.880  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2021-04-19 00:20:44.881  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-19 00:20:44.884  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-19 00:20:44.894  INFO 12192 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-19 00:20:45.035  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_1
+2021-04-19 00:20:45.044  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_2
+2021-04-19 00:20:45.067  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 2.684 seconds (JVM running for 2751.331)
+2021-04-19 00:20:45.071  INFO 12192 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-19 00:21:06.990  INFO 12192 --- [Thread-47] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:21:06.992  INFO 12192 --- [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:21:06.993  INFO 12192 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-04-19 00:21:07.010  INFO 12192 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-04-19 00:21:07.095  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Start Application
+2021-04-19 00:21:07.133  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Starting HomeLoanAppApplication using Java 11.0.2 on DESKTOP-H3VN1C2 with PID 12192 (D:\Work\Workspace\com.cg.homeloan\bin\main started by Aaradhya_Jain in D:\Work\Workspace\com.cg.homeloan)
+2021-04-19 00:21:07.133  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : No active profile set, falling back to default profiles: default
+2021-04-19 00:21:08.343  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 00:21:08.413  INFO 12192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 7 JPA repository interfaces.
+2021-04-19 00:21:08.639  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8095 (http)
+2021-04-19 00:21:08.641  INFO 12192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-19 00:21:08.643  INFO 12192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-19 00:21:08.681  INFO 12192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-19 00:21:08.681  INFO 12192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1544 ms
+2021-04-19 00:21:08.754  INFO 12192 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 00:21:08.763  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-04-19 00:21:08.825  INFO 12192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-04-19 00:21:08.827  INFO 12192 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2021-04-19 00:21:09.093  INFO 12192 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 00:21:09.093  INFO 12192 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 00:21:09.106  INFO 12192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-19 00:21:09.771  WARN 12192 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 00:21:09.868  INFO 12192 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 00:21:09.939  INFO 12192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 00:21:10.042  INFO 12192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8095 (http) with context path ''
+2021-04-19 00:21:10.046  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-04-19 00:21:10.047  INFO 12192 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-04-19 00:21:10.062  INFO 12192 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-04-19 00:21:10.316  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_1
+2021-04-19 00:21:10.325  INFO 12192 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllLoanApplicationsUsingGET_2
+2021-04-19 00:21:10.345  INFO 12192 --- [restartedMain] com.cg.homeloan.HomeLoanAppApplication   : Started HomeLoanAppApplication in 3.243 seconds (JVM running for 2776.607)
+2021-04-19 00:21:10.355  INFO 12192 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-19 00:22:54.170  INFO 12192 --- [http-nio-8095-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-19 00:22:54.171  INFO 12192 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-19 00:22:54.174  INFO 12192 --- [http-nio-8095-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-04-19 00:22:54.203  WARN 12192 --- [http-nio-8095-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.LoanApplicationNotFoundException: Loan Application Not Found!!!]
+2021-04-19 00:23:02.431  WARN 12192 --- [http-nio-8095-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.LoanApplicationNotFoundException: Loan Application Not Found!!!]
+2021-04-19 00:23:09.049  WARN 12192 --- [http-nio-8095-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.cg.homeloan.exceptions.LoanApplicationNotFoundException: Loan Application Not Found!!!]

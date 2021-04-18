@@ -16,7 +16,7 @@ import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.entities.Status;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
-import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
 import com.cg.homeloan.services.CustomerService;
 import com.cg.homeloan.services.IEmiService;
 import com.cg.homeloan.services.ILoanApplicationService;
@@ -54,7 +54,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/loanTracker/{loanApplicationId}")
-	public ResponseEntity<?> loanTracker(int loanApplicationId) throws LoanApplicationNotFoundExcption, LoanAgreementNotFoundException{
+	public ResponseEntity<?> loanTracker(int loanApplicationId) throws LoanApplicationNotFoundException, LoanAgreementNotFoundException{
 		if(loanapplicationservice.getLoanApplication(loanApplicationId).getStatus()!=Status.APPROVED)
 			return new ResponseEntity<>(loanapplicationservice.getLoanApplication(loanApplicationId).getStatus(),HttpStatus.OK);
 		else

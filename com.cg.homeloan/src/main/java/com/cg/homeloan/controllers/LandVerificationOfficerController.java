@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.LandVerificationException;
-import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
 import com.cg.homeloan.services.ILoanApplicationService;
 import com.cg.homeloan.services.LandVerificationService;
 
@@ -33,7 +33,7 @@ public class LandVerificationOfficerController {
 	}
 	
 	@PutMapping("/updateLandVerificationStatus/{loanApplicationId}")
-	public ResponseEntity<LoanApplication> updateLandStatus(@PathVariable int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption {
+	public ResponseEntity<LoanApplication> updateLandStatus(@PathVariable int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundException {
 		return new ResponseEntity<>(loanApplicationService.updateLandStatus(loanApplicationId), HttpStatus.OK);
 
 	}
