@@ -21,20 +21,18 @@ public class CustomerService implements ICustomerService {
 		iCustomerRepository.save(customer);
 		return customer;
 	}
-	
-	// getting a specific record by using the method findById() of CrudRepository
+
+  // getting a specific record by using the method findById() of CrudRepository
 	@Override
 	public Customer getCustomer(int userId) throws CustomerNotFoundException { 
 		return iCustomerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
 	}
-	
-	
-	// it gets all the customers
+
+  // it gets all the customers
 	@Override
 	public List<Customer> getAllCustomers(){
 		return iCustomerRepository.findAll();
 	}
-	
 	
 	// updating a specific record by using specific userId of the customer
 	@Override

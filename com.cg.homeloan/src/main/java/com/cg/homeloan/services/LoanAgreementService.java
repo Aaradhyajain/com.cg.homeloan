@@ -28,8 +28,7 @@ public class LoanAgreementService implements ILoanAgreementService{
 	public LoanAgreement getLoanAgreement(int loanApplicationId) throws LoanAgreementNotFoundException {
 		return loanAgreementRepository.findByLoanApplicationId(loanApplicationId).orElseThrow(() -> new LoanAgreementNotFoundException("Loan Agreement Not Found!"));
 	}
-	
-	
+		
 	// for getting all the LoanAgreements 
 	@Override
 	public List<LoanAgreement> getAllLoanAgreements() {
@@ -43,7 +42,6 @@ public class LoanAgreementService implements ILoanAgreementService{
 		loanAgreementRepository.deleteById(loanAgreementId);
 		return loanAgreement;
 	}
-	
 	
 	// update the info of specific LoanAgreement using loanAgreementId
 	@Override

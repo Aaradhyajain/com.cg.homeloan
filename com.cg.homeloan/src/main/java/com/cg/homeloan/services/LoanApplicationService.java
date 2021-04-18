@@ -134,6 +134,47 @@ public class LoanApplicationService implements ILoanApplicationService {
 	 * when admin checks whether the all the information in Loan Applicaiton is true
 	 */
 	@Override
+	public List<LoanApplication> getAllLoanApplication() {
+		return loanApplicationRepository.findAll();
+	}
+	
+	@Override
+	public LoanAgreement checkStatus(int loanApplicationId) throws LoanAgreementNotFoundException {
+		return loanAgreementService.getLoanAgreement(loanApplicationId);
+	}
+	@Override
+	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption{
+		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
+				
+		if(loanApplication.getStatus()== Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL 
+						&& !loanApplication.isLandVerificationApproval() ) 
+		{
+			loanApplication.setLandVerificationApproval(true);
+			loanApplication.setStatus(Status.WAITING_FOR_FINANCE_APPROVAL);
+			return loanApplicationRepository.save(loanApplication);	
+		}
+		else  
+		{
+		 throw new LandVerificationException("Something went wrong") ;	
+		}	
+	}
+	
+	@Override
+	public LoanApplication updateFinanceStatus(int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundExcption {
+		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
+		
+		if (loanApplication.getStatus() == Status.WAITING_FOR_FINANCE_APPROVAL
+				&& loanApplication.isLandVerificationApproval()
+				&& !loanApplication.isFinanceVerificationApproval()) {
+			loanApplication.setFinanceVerificationApproval(true);
+			loanApplication.setStatus(Status.PENDING);
+			return loanApplicationRepository.save(loanApplication);
+
+		} else 
+			throw new FinanceVerificationException("Something went wrong");
+	}
+	
+	@Override
 	public LoanApplication updateAdminStatus(int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundExcption {
 		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
 		
