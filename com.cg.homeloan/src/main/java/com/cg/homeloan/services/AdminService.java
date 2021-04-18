@@ -37,6 +37,11 @@ public class AdminService implements IAdminService {
 		return iAdminRepository.findAll();
 	}
 	
+	/*
+	 * this method check the admin's credential is valid or not
+	 * it returns true or false
+	 */
+   
 	@Override
 	public Boolean isValidAdmin(String username, String password) {
 		return iAdminRepository.findByUsernameAndPassword(username, password)!=null;

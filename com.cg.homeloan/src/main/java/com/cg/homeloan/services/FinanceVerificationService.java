@@ -17,6 +17,10 @@ public class FinanceVerificationService implements IFinanceVerificationService {
 		return officer;
 	}
 
+	/*
+	 * it checks whether the ofiicer's credential is valid or not
+	 * it returns true or false
+	 */
 	@Override
 	public Boolean isValidFinanceOfficer(String username, String password) {
 		return iFinanceVerificationRepository.findByUsernameAndPassword(username, password)!=null;

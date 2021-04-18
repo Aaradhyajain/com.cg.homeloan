@@ -25,6 +25,10 @@ public class LandVerificationService implements ILandVerificationService {
 		return officer;
 	}	
 	
+	/*
+	 * it checks whether the officer's credential is valid or not
+	 * it returns true or false
+	 */
 	@Override
 	public Boolean isValidLandOfficer(String username, String password) {
 		return iLandVerificationRepository.findByUsernameAndPassword(username, password)!=null;
