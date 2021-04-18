@@ -36,6 +36,7 @@ public class LoanApplicationService implements ILoanApplicationService {
 	@Autowired
 	ILoanAgreementService loanAgreementService;
 
+
 	//To add any loan application or to apply loan
 	@Override
 	public LoanApplication addLoanApplication(int userId, double loanAppliedAmount,int loanTenureYears) throws CustomerNotFoundException {
