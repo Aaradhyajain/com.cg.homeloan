@@ -31,17 +31,7 @@ class LandVerificationServiceTest {
 	@MockBean
 	ILandVerificationRepository landVerifiactionRepository;
 
-	@Test
-	@DisplayName("positive test update status")
-	void testUpdateStatusPositive() throws Exception {
 
-	}
-
-	@Test
-	@DisplayName("negative test update status")
-	void testUpdateStatusnegative() throws Exception {
-
-	}
 	@Test
 	@DisplayName("Positive Test case for Validate LandVerificationOfficer")
 	public void testValidAdminPositive() {

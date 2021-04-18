@@ -10,7 +10,10 @@ import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.cg.homeloan.entities.Admin;
 import com.cg.homeloan.entities.FinanceVerificationOfficer;
+import com.cg.homeloan.entities.Status;
 import com.cg.homeloan.repositories.IFinanceVerificationRepository;
 import com.cg.homeloan.services.IFinanceVerificationService;
 
@@ -30,27 +33,7 @@ class FinanceVerificationServiceTest {
 	@MockBean
 	IFinanceVerificationRepository financeVerificationRepository;
 
-	@Test
-	@DisplayName("positive test update status")
-	void testUpdateStatusPositive() throws Exception {
-//		financeVerificationOfficer.setFinOfficerName("saish");
-//		when(financeVerificationRepository.findById(null)).thenReturn(Optional.of(FinanceVerificationOfficer));
-//		when(finaceVerificationService.updateStatus(loan)).thenReturn(loan);
-//		assertEquals(loan, finaceVerificationService.updateStatus(loan));
-//		verify(financeVerificationService).updateStatus(loan);
-//
-	}
 
-	@Test
-	@DisplayName("negative test update status")
-	void testUpdateStatusNegative() throws Exception {
-//		financeVerificationOfficer.setFinOfficerName("saish");
-//		when(financeVerificationRepository.findById(null)).thenReturn(Optional.of(FinanceVerificationOfficer));
-//		when(finaceVerificationService.updateStatus(loan)).thenReturn(loan);
-//		assertEquals(loan, finaceVerificationService.updateStatus(loan));
-//		verify(financeVerificationService).updateStatus(loan);
-//
-	}
 	
 	@Test
 	@DisplayName("Positive Test case for Validate FinanceVerificationOfficer")

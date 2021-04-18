@@ -16,6 +16,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.cg.homeloan.entities.Customer;
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.repositories.ILoanApplicationRepository;
 import com.cg.homeloan.services.ILoanApplicationService;
 
@@ -83,9 +84,9 @@ class LoanApplicationServiceTest {
 
 	@Test
 	@DisplayName("negative test case of add loanapplication")
-	void testAddLoanApplicationNegative() throws Exception {
+	void testAddLoanApplicationNegative() throws CustomerNotFoundException {
 		when(loanApplicationRepository.save(loanApplication)).thenReturn(loanApplication);
-		assertNotEquals(loanApplication1, loanApplicationService.addLoanApplication(1,1200000,10));
+		assertNotEquals(loanApplication, loanApplicationService.addLoanApplication(1,1200000,10));
 	}
 
 	@Test

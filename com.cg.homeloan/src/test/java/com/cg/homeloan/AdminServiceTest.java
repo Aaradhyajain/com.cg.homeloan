@@ -55,7 +55,6 @@ class AdminServiceTest {
 	void testAddAdminValidTest() throws Exception {
 		when(adminRepository.save(admin)).thenReturn(admin);
 		assertEquals(admin, adminService.addAdmin(admin));
-
 	}
 
 	@Test
