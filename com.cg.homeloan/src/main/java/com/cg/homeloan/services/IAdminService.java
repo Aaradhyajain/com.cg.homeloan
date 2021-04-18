@@ -7,8 +7,8 @@ import com.cg.homeloan.entities.Admin;
 public interface IAdminService {
 
 	public Admin addAdmin(Admin admin); 
-	public Admin getAdminId(int userId);
+	public Admin getAdmin(int userId);
 	public List<Admin> getAllAdmin();
-	//public Admin validateAdmin(Admin admin);
+	public Boolean isValidAdmin(String username, String password);
 	}
 

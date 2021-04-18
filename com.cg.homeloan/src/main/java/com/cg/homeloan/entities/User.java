@@ -5,34 +5,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "all_User")
+@Table(name = "user_data")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private int userId;
 	@Column
 	private String username;
 	@Column
 	private String password;
-	@Column
-	private String role;
-
-	
-	@OneToOne
-	@JoinColumn(name="userId")
-	private Customer customer;
 	
 
-	@OneToOne
-	@JoinColumn(name="userId")
-	private Admin admin;
+	public User() {
+		super();
+	}
+	
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
+	public User(int userId, String username, String password) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -58,34 +63,10 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	
-	
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", role=" + role + "]";
-	}
-
-	public User(int userId,String username, String password, String role) {
-		super();
-		this.userId = userId;
-		this.username=username;
-		this.password = password;
-		this.role = role;
-		
-	}
-
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+		return "User [userId=" + userId + ", password=" + password + "]";
 	}
 
 }

@@ -2,18 +2,12 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "lvo")
-public class LandVerificationOfficer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private int userId;
+@Table(name = "land_officer")
+public class LandVerificationOfficer extends User {
+	
 	@Column
 	private String officerName;
 	@Column
@@ -21,15 +15,12 @@ public class LandVerificationOfficer {
 
 	public LandVerificationOfficer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public LandVerificationOfficer(int userId,String username,String password, String officerName, String officerContact) {
+		super(userId,username,password);
+		this.officerName = officerName;
+		this.officerContact = officerContact;
 	}
 
 	public String getOfficerName() {
@@ -50,15 +41,8 @@ public class LandVerificationOfficer {
 
 	@Override
 	public String toString() {
-		return "LandVerificationOfficer [userId=" + userId + ", officerName=" + officerName + ", officerContact="
+		return "LandVerificationOfficer [officerName=" + officerName + ", officerContact="
 				+ officerContact + "]";
-	}
-
-	public LandVerificationOfficer(int userId, String officerName, String officerContact) {
-		super();
-		this.userId = userId;
-		this.officerName = officerName;
-		this.officerContact = officerContact;
 	}
 
 }

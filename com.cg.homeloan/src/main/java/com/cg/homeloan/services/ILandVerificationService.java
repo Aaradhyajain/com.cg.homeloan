@@ -1,12 +1,11 @@
 package com.cg.homeloan.services;
 
-
-import com.cg.homeloan.entities.LoanApplication;
-import com.cg.homeloan.repositories.ILandVerificationRepository;
+import com.cg.homeloan.entities.LandVerificationOfficer;
 
 public interface ILandVerificationService {
-		public void updateStatus(LoanApplication loanApplication);
-
-		}
+	
+	public Boolean isValidLandOfficer(String username, String password);
+	public LandVerificationOfficer addLandOfficer(LandVerificationOfficer officer); 
+}
 
 

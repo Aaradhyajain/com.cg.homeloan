@@ -1,24 +1,21 @@
 package com.cg.homeloan.exceptions;
 
-public class FinanceVerificationException extends Exception {
+public class LoanAgreementNotFoundException extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-
-	public FinanceVerificationException() {
+	public LoanAgreementNotFoundException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	public FinanceVerificationException(String message) {
-		super(message);
+	public LoanAgreementNotFoundException(String arg0) {
+		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
-
-
 	
+
 }

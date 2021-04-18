@@ -2,19 +2,12 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "fvo")
-public class FinanceVerificationOfficer {
+@Table(name = "finance_officer")
+public class FinanceVerificationOfficer extends User {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private int userId;
 	@Column
 	private String finOfficerName;
 	@Column
@@ -22,21 +15,12 @@ public class FinanceVerificationOfficer {
 
 	public FinanceVerificationOfficer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	@Override
-	public String toString() {
-		return "FinanceVerificationOfficer [userId=" + userId + ", finOfficerName=" + finOfficerName
-				+ ", finOfficerContact=" + finOfficerContact + "]";
+	public FinanceVerificationOfficer(int userId,String username,String password, String finOfficerName, String finOfficerContact) {
+		super(userId, username,password);
+		this.finOfficerName = finOfficerName;
+		this.finOfficerContact = finOfficerContact;
 	}
 
 	public String getFinOfficerName() {
@@ -55,10 +39,10 @@ public class FinanceVerificationOfficer {
 		this.finOfficerContact = finOfficerContact;
 	}
 
-	public FinanceVerificationOfficer(int userId, String finOfficerName, String finOfficerContact) {
-		super();
-		this.userId = userId;
-		this.finOfficerName = finOfficerName;
-		this.finOfficerContact = finOfficerContact;
+	@Override
+	public String toString() {
+		return "FinanceVerificationOfficer [finOfficerName=" + finOfficerName
+				+ ", finOfficerContact=" + finOfficerContact + "]";
 	}
+
 }

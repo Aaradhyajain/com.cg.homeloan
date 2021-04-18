@@ -13,18 +13,19 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "loanapplication")
+@Table(name = "loan_application")
 public class LoanApplication {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int applicationId;
 	@Column
-	private long applicationId;
-	@Column
-	private LocalDate applicationDate;
+	private LocalDate applicationDate;  
 	@OneToOne
 	private Customer customer;
 	@Column
 	private double loanAppliedAmount;
+	@Column
+	private int loanTenureYears;
 	@Column
 	private double loanApprovedAmount;
 	@Column
@@ -33,19 +34,49 @@ public class LoanApplication {
 	private boolean financeVerificationApproval;
 	@Column
 	private boolean adminApproval;
+	@Column
 	@Enumerated(EnumType.STRING)
 	private Status status;
 
 	public LoanApplication() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+	
+	public LoanApplication(int applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
+			int loanTenureYears, double loanApprovedAmount, boolean landVerificationApproval,
+			boolean financeVerificationApproval, boolean adminApproval, Status status) {
+		super();
+		this.applicationId = applicationId;
+		this.applicationDate = applicationDate;
+		this.customer = customer;
+		this.loanAppliedAmount = loanAppliedAmount;
+		this.loanTenureYears = loanTenureYears;
+		this.loanApprovedAmount = loanApprovedAmount;
+		this.landVerificationApproval = landVerificationApproval;
+		this.financeVerificationApproval = financeVerificationApproval;
+		this.adminApproval = adminApproval;
+		this.status = status;
+	}
+
+
+
+	public LoanApplication(Customer customer, double loanAppliedAmount, int loanTenureYears) {
+		super();
+		this.customer = customer;
+		this.loanAppliedAmount = loanAppliedAmount;
+		this.applicationDate=LocalDate.now();
+		this.loanTenureYears=loanTenureYears;
+		this.landVerificationApproval = false;
+		this.financeVerificationApproval = false;
+		this.adminApproval=false;
+		this.status = Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL;
 	}
 
 	public long getApplicationId() {
 		return applicationId;
 	}
 
-	public void setApplicationId(long applicationId) {
+	public void setApplicationId(int applicationId) {
 		this.applicationId = applicationId;
 	}
 
@@ -71,6 +102,14 @@ public class LoanApplication {
 
 	public void setLoanAppliedAmount(double loanAppliedAmount) {
 		this.loanAppliedAmount = loanAppliedAmount;
+	}
+
+	public int getLoanTenureYears() {
+		return loanTenureYears;
+	}
+
+	public void setLoanTenureYears(int loanTenureYears) {
+		this.loanTenureYears = loanTenureYears;
 	}
 
 	public double getLoanApprovedAmount() {
@@ -120,21 +159,6 @@ public class LoanApplication {
 				+ loanApprovedAmount + ", landVerificationApproval=" + landVerificationApproval
 				+ ", financeVerificationApproval=" + financeVerificationApproval + ", adminApproval=" + adminApproval
 				+ ", status=" + status + "]";
-	}
-
-	public LoanApplication(long applicationId, LocalDate applicationDate, Customer customer, double loanAppliedAmount,
-			double loanApprovedAmount, boolean landVerificationApproval, boolean financeVerificationApproval,
-			boolean adminApproval, Status status) {
-		super();
-		this.applicationId = applicationId;
-		this.applicationDate = applicationDate;
-		this.customer = customer;
-		this.loanAppliedAmount = loanAppliedAmount;
-		this.loanApprovedAmount = loanApprovedAmount;
-		this.landVerificationApproval = landVerificationApproval;
-		this.financeVerificationApproval = financeVerificationApproval;
-		this.adminApproval = adminApproval;
-		this.status = status;
 	}
 
 }

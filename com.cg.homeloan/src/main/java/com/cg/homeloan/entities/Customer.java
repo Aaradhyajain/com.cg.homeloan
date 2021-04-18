@@ -4,18 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private int userId;
+public class Customer extends User{
+	
 	@Column
 	private String customerName;
 	@Column
@@ -33,21 +27,25 @@ public class Customer {
 	@Column
 	private String panNumber;
 
-	@Override
-	public String toString() {
-		return "Customer [userId=" + userId + ", customerName=" + customerName + ", mobileNumber=" + mobileNumber
-				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+	public Customer() {
+		super();
 	}
 
-	public int getUserId() {
-		return userId;
+	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
+			String gender, String nationality, String aadharNumber, String panNumber) {
+		super(userId,username,password);
+		
+		this.customerName = customerName;
+		this.mobileNumber = mobileNumber;
+		this.emailId = emailId;
+		this.dateOfBirth = dateOfBirth;
+		this.gender = gender;
+		this.nationality = nationality;
+		this.aadharNumber = aadharNumber;
+		this.panNumber = panNumber;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
+	
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -112,23 +110,11 @@ public class Customer {
 		this.panNumber = panNumber;
 	}
 
-	public Customer(int userId, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
-			String gender, String nationality, String aadharNumber, String panNumber) {
-		super();
-		this.userId = userId;
-		this.customerName = customerName;
-		this.mobileNumber = mobileNumber;
-		this.emailId = emailId;
-		this.dateOfBirth = dateOfBirth;
-		this.gender = gender;
-		this.nationality = nationality;
-		this.aadharNumber = aadharNumber;
-		this.panNumber = panNumber;
-	}
-
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
+				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
+				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
 	}
 
 }

@@ -2,43 +2,28 @@ package com.cg.homeloan.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "admin")
-public class Admin {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private int userId;
+public class Admin extends User {
+
 	@Column
 	private String adminName;
 	@Column
 	private String adminContact;
 
-	public Admin(int userId, String adminName, String adminContact) {
+	public Admin() {
 		super();
-		this.userId = userId;
+	}
+
+	public Admin(String adminContact,String adminName,String password,int userId, String username) {
+		super(userId,username,password);
 		this.adminName = adminName;
 		this.adminContact = adminContact;
 	}
 
-	@Override
-	public String toString() {
-		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
+	
 	public String getAdminName() {
 		return adminName;
 	}
@@ -55,8 +40,9 @@ public class Admin {
 		this.adminContact = adminContact;
 	}
 
-	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Admin [ adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
+
 }
