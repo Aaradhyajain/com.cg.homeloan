@@ -11,7 +11,6 @@ public class ErrorDetails {
 	
 	public ErrorDetails() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public ErrorDetails(String message, LocalDate date, String description) {

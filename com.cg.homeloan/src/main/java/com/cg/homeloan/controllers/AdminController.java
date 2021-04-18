@@ -23,7 +23,7 @@ import com.cg.homeloan.entities.LoanApplication;
 import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
-import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
 import com.cg.homeloan.services.CustomerService;
 import com.cg.homeloan.services.IAdminService;
 import com.cg.homeloan.services.IFinanceVerificationService;
@@ -94,13 +94,13 @@ public class AdminController {
 	}
 	
 	@PutMapping("/updateAdminVerificationStatus/{loanApplicationId}")
-	public ResponseEntity<LoanApplication> updateAdminStatus(@PathVariable int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundExcption {
+	public ResponseEntity<LoanApplication> updateAdminStatus(@PathVariable int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundException {
 		return new ResponseEntity<>(loanApplicationService.updateAdminStatus(loanApplicationId), HttpStatus.OK);
 
 	}
 	
 	@PutMapping("/updateLoanApplication")
-	public ResponseEntity<LoanApplication> updateLoanApplication(@PathVariable int loanApplicationId, @RequestBody LoanApplication loanApplication) throws LoanApplicationNotFoundExcption {
+	public ResponseEntity<LoanApplication> updateLoanApplication(@PathVariable int loanApplicationId, @RequestBody LoanApplication loanApplication) throws LoanApplicationNotFoundException {
 		return new ResponseEntity<>(loanApplicationService.updateLoanApplication(loanApplicationId,loanApplication), HttpStatus.OK);
 	}
 	
@@ -121,7 +121,7 @@ public class AdminController {
 	}
 	
 	@DeleteMapping("/deleteLoanApplication/{loanApplicationId}")
-	public ResponseEntity<LoanApplication> deleteLoanApplication(@PathVariable int loanApplicationId) throws LoanApplicationNotFoundExcption {
+	public ResponseEntity<LoanApplication> deleteLoanApplication(@PathVariable int loanApplicationId) throws LoanApplicationNotFoundException {
 		return new ResponseEntity<>(loanApplicationService.deleteLoanApplication(loanApplicationId), HttpStatus.OK);
 	}
 	

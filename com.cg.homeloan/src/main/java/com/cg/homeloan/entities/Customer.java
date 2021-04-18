@@ -112,9 +112,11 @@ public class Customer extends User{
 
 	@Override
 	public String toString() {
-		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber
-				+ ", emailId=" + emailId + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality="
-				+ nationality + ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + "]";
+		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
+				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality=" + nationality
+				+ ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + ", userId=" + getUserId()
+				+ ", username=" + getUsername() + ", password=" + getPassword() + "]";
 	}
 
+	
 }

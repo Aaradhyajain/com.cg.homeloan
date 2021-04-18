@@ -13,6 +13,10 @@ public class EmiService implements IEmiService {
 	@Autowired
 	IEmiRepository emiRepository;
 	
+	
+	/*
+	 * this method add emi details to the loan application when loan is approved
+	 */
 	@Override
 	public EMI addEmiDetails(double loanAppliedAmount,double intrestRate,int tenure) {
 		double emiAmount =calculateEmi(loanAppliedAmount,intrestRate,tenure);
@@ -26,6 +30,10 @@ public class EmiService implements IEmiService {
 		return emiRepository.save(emi);
 	}
 	
+	
+	/*
+	 * this method calculate the emi for customer
+	 */
 	@Override
 	public double calculateEmi(double principal,double intrestRate,int tenure) {
 		intrestRate = intrestRate/(12*100);

@@ -39,7 +39,7 @@ public class LoanAgreement {
 		this.emi = emi;
 	}
 
-	public long getLoanAgreementId() {
+	public int getLoanAgreementId() {
 		return loanAgreementId;
 	}
 
@@ -47,7 +47,7 @@ public class LoanAgreement {
 		this.loanAgreementId = loanAgreementId;
 	}
 
-	public long getLoanApplicationId() {
+	public int getLoanApplicationId() {
 		return loanApplicationId;
 	}
 

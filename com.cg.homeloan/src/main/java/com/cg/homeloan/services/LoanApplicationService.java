@@ -14,10 +14,13 @@ import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.FinanceVerificationException;
 import com.cg.homeloan.exceptions.LandVerificationException;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
-import com.cg.homeloan.exceptions.LoanApplicationNotFoundExcption;
-import com.cg.homeloan.repositories.ICustomerRepository;
+import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
 import com.cg.homeloan.repositories.ILoanApplicationRepository;
-
+/**
+ * 
+ * @author Aaradhya_Jain
+ * All services of Loan Application.
+ */
 @Service
 public class LoanApplicationService implements ILoanApplicationService {
 
@@ -25,7 +28,7 @@ public class LoanApplicationService implements ILoanApplicationService {
 	ILoanApplicationRepository loanApplicationRepository;
 	
 	@Autowired
-	ICustomerRepository customerRepository;
+	ICustomerService customerService;
 	
 	@Autowired
 	IEmiService emiService;
@@ -33,46 +36,51 @@ public class LoanApplicationService implements ILoanApplicationService {
 	@Autowired
 	ILoanAgreementService loanAgreementService;
 
+	//To add any loan application or to apply loan
 	@Override
 	public LoanApplication addLoanApplication(int userId, double loanAppliedAmount,int loanTenureYears) throws CustomerNotFoundException {
-		Customer customer = customerRepository.findById(userId).orElseThrow(()->new CustomerNotFoundException("Customer detail not found !!!"));
+		Customer customer = customerService.getCustomer(userId);
 		LoanApplication loanApplication = new LoanApplication(customer,loanAppliedAmount,loanTenureYears);
-				return loanApplicationRepository.save(loanApplication);
-	}
-
-	@Override
-	public LoanApplication updateLoanApplication(int loanApplicationId, LoanApplication loanApplication)
-			throws LoanApplicationNotFoundExcption {
-		loanApplicationRepository.findById(loanApplicationId)
-				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
 		return loanApplicationRepository.save(loanApplication);
 	}
 
+	//To update any changes in loan application
 	@Override
-	public LoanApplication deleteLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundExcption {
-		LoanApplication loanApplication =loanApplicationRepository.findById(loanApplicationId)
-				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
+	public LoanApplication updateLoanApplication(int loanApplicationId, LoanApplication loanApplication) throws LoanApplicationNotFoundException {
+		getLoanApplication(loanApplicationId);
+		return loanApplicationRepository.save(loanApplication);
+	}
+
+	//To delete any particular loan application by its id
+	@Override
+	public LoanApplication deleteLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundException {
+		LoanApplication loanApplication =getLoanApplication(loanApplicationId);
 		loanApplicationRepository.deleteById(loanApplicationId);
 		return loanApplication;
 	}
 	
+	//Get any loan application by its id
 	@Override
-	public LoanApplication getLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundExcption {
+	public LoanApplication getLoanApplication(int loanApplicationId) throws LoanApplicationNotFoundException {
 		return loanApplicationRepository.findById(loanApplicationId)
-				.orElseThrow(() -> new LoanApplicationNotFoundExcption("Loan Application Not Found!!!"));
+				.orElseThrow(() -> new LoanApplicationNotFoundException("Loan Application Not Found!!!"));
 	}
 	
+	//Get all loan applications
 	@Override
 	public List<LoanApplication> getAllLoanApplication() {
 		return loanApplicationRepository.findAll();
 	}
 	
+	//This is for track any application if it's status is approved
 	@Override
 	public LoanAgreement checkStatus(int loanApplicationId) throws LoanAgreementNotFoundException {
 		return loanAgreementService.getLoanAgreement(loanApplicationId);
 	}
+	
+	//Land officer's verification and approval in any loan application
 	@Override
-	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundExcption{
+	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException, LoanApplicationNotFoundException{
 		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
 				
 		if(loanApplication.getStatus()== Status.WAITING_FOR_LAND_VERIFICATION_OFFICE_APPROVAL 
@@ -88,8 +96,9 @@ public class LoanApplicationService implements ILoanApplicationService {
 		}	
 	}
 	
+	//Finance officer's verification and approval in any loan application
 	@Override
-	public LoanApplication updateFinanceStatus(int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundExcption {
+	public LoanApplication updateFinanceStatus(int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundException {
 		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
 		
 		if (loanApplication.getStatus() == Status.WAITING_FOR_FINANCE_APPROVAL
@@ -100,11 +109,12 @@ public class LoanApplicationService implements ILoanApplicationService {
 			return loanApplicationRepository.save(loanApplication);
 
 		} else 
-			throw new FinanceVerificationException("Something went wrong");
+			throw new FinanceVerificationException("Waiting for Land Verification Approval !!!");
 	}
 	
+	//Admin's verification and approval in any loan application and also for add loan agreement
 	@Override
-	public LoanApplication updateAdminStatus(int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundExcption {
+	public LoanApplication updateAdminStatus(int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundException {
 		LoanApplication loanApplication = getLoanApplication(loanApplicationId);
 		
 		if (loanApplication.getStatus() == Status.PENDING
@@ -121,7 +131,7 @@ public class LoanApplicationService implements ILoanApplicationService {
 			return loanApplicationRepository.save(loanApplication);
 
 		} else 
-			throw new AdminApprovalException("Something went wrong");
+			throw new AdminApprovalException("Waiting for Officers Approval !!! ");
 	}
 
 }
