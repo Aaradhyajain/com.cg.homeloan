@@ -31,17 +31,17 @@ class AdminServiceTest {
 		admin.setAdminName("asddf");
 		admin.setAdminContact("554");
 		admin.setPassword("Saishf@");
-		admin.setUsername("om");
+		admin.setUserName("om");
 		
 		admin1.setAdminName("asd");
 		admin1.setAdminContact("s7");
 		admin1.setPassword("jshs@1");
-		admin1.setUsername("bcx");
+		admin1.setUserName("bcx");
 		
 		admin2.setAdminName("qwe");
 		admin2.setAdminContact("tyu");
 		admin2.setPassword("uio@1");
-		admin2.setUsername("mjk");
+		admin2.setUserName("mjk");
 	}
 
 	@Autowired
@@ -119,8 +119,8 @@ class AdminServiceTest {
 	public void testValidAdminNegative() {
 		Admin expected = new Admin("1234567890", "admin", "12345", 1, "admin@123");
 		when(adminRepository.findByUsernameAndPassword("admin@123", "12345")).thenReturn(expected);
-		boolean val = adminService.isValidAdmin("admin@123", "12345");
-		assertNotEquals(val, false);
+		boolean val = adminService.isValidAdmin("admin@123", "1234");
+		assertNotEquals(val, true);
 	}
 
 }

@@ -32,29 +32,18 @@ class LandVerificationServiceTest {
 	ILandVerificationRepository landVerifiactionRepository;
 
 	@Test
-	@DisplayName("positive test update status")
-	void testUpdateStatusPositive() throws Exception {
-
-	}
-
-	@Test
-	@DisplayName("negative test update status")
-	void testUpdateStatusnegative() throws Exception {
-
-	}
-	@Test
-	@DisplayName("Positive Test case for Validate LandVerificationOfficer")
-	public void testValidAdminPositive() {
+	@DisplayName("Test case for Validate LandVerificationOfficer with correct details")
+	void testValidAdminPositive() {
 		when(landVerifiactionRepository.findByUsernameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
 		boolean val = landVerificationService.isValidLandOfficer("sonu@123", "1234");
 		assertEquals(val, true);
 	}
 
 	@Test
-	@DisplayName("Negative Test case for Validate LandVerificationOfficer")
-	public void testValidAdminNegative() {
+	@DisplayName("Test case for Validate LandVerificationOfficer wrong details")
+	void testValidAdminNegative() {
 		when(landVerifiactionRepository.findByUsernameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
-		boolean val = landVerificationService.isValidLandOfficer("sonu@123", "1234");
-		assertNotEquals(val, false);
+		boolean val = landVerificationService.isValidLandOfficer("sonu@123", "12345");
+		assertNotEquals(val, true);
 	}
 }
