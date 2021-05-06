@@ -33,7 +33,7 @@ class FinanceVerificationServiceTest {
 	@Test
 	@DisplayName("Test case for Validate FinanceVerificationOfficer with correct details")
 	void testValidAdminPositive() {
-		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
+		when(financeVerificationRepository.findByUserNameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
 		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "12345");
 		assertEquals(val, true);
 	}
@@ -41,7 +41,7 @@ class FinanceVerificationServiceTest {
 	@Test
 	@DisplayName("Test case for Validate FinanceVerificationOfficers with wrong details")
 	void testValidAdminNegative() {
-		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
+		when(financeVerificationRepository.findByUserNameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
 		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "123");
 		assertNotEquals(val, true);
 	}

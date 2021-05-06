@@ -9,6 +9,6 @@ public interface IAdminService {
 	public Admin addAdmin(Admin admin); 
 	public Admin getAdmin(int userId);
 	public List<Admin> getAllAdmin();
-	public Boolean isValidAdmin(String username, String password);
+	public Boolean isValidAdmin(String userName, String password);
 	}
 

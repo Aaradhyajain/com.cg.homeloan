@@ -6,5 +6,5 @@ import com.cg.homeloan.entities.Admin;
 public interface IAdminRepository extends JpaRepository<Admin, Integer>{
 		
 
-	public Admin findByUsernameAndPassword(String username, String password);
+	public Admin findByUserNameAndPassword(String userName, String password);
 }

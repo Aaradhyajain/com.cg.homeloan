@@ -43,8 +43,8 @@ public class AdminService implements IAdminService {
 	 */
    
 	@Override
-	public Boolean isValidAdmin(String username, String password) {
-		return iAdminRepository.findByUsernameAndPassword(username, password)!=null;
+	public Boolean isValidAdmin(String userName, String password) {
+		return iAdminRepository.findByUserNameAndPassword(userName, password)!=null;
 	}
 	
 }

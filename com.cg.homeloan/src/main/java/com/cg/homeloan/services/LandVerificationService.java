@@ -30,7 +30,7 @@ public class LandVerificationService implements ILandVerificationService {
 	 * it returns true or false
 	 */
 	@Override
-	public Boolean isValidLandOfficer(String username, String password) {
-		return iLandVerificationRepository.findByUsernameAndPassword(username, password)!=null;
+	public Boolean isValidLandOfficer(String userName, String password) {
+		return iLandVerificationRepository.findByUserNameAndPassword(userName, password)!=null;
 	}
 }
