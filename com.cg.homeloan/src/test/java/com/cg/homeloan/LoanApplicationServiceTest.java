@@ -57,7 +57,7 @@ class LoanApplicationServiceTest {
 		customer.setNationality("Indian");
 		customer.setPanNumber("213BP2P");
 		customer.setAadharNumber("528545691236");
-		customer.setUsername("Sita");
+		customer.setUserName("Sita");
 		customer.setPassword("1234");
 		
 		loanApplication = new LoanApplication(customer,5000000,10);
@@ -73,7 +73,7 @@ class LoanApplicationServiceTest {
 		customer1.setNationality("Indian");
 		customer1.setPanNumber("213BP2P");
 		customer1.setAadharNumber("528545691236");
-		customer1.setUsername("Sita");
+		customer1.setUserName("Sita");
 		customer1.setPassword("1234");
 		
 		loanApplication1 = new LoanApplication(customer1,100000,10);
@@ -141,6 +141,18 @@ class LoanApplicationServiceTest {
 		assertThrows(LoanApplicationNotFoundException.class,()-> loanApplicationService.deleteLoanApplication(1001));
 
 	}
+	
+//	@Test
+//	@DisplayName("Test case for add Loan Application")
+//	void testAddLoanApplicationPositive() throws Exception {
+//		
+//		when(customerRepository.save(customer)).thenReturn(customer);
+//		when(customerRepository.findById(1)).thenReturn(Optional.of(customer));
+//		System.out.println(customer);
+//		when(loanApplicationRepository.save(loanApplication)).thenReturn(loanApplication);
+//		assertEquals(loanApplication, loanApplicationService.addLoanApplication(1,5000000,10));
+//	}
+
 	
 	
 }

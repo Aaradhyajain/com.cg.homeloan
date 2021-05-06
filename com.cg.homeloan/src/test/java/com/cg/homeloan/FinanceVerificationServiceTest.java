@@ -31,40 +31,18 @@ class FinanceVerificationServiceTest {
 	IFinanceVerificationRepository financeVerificationRepository;
 
 	@Test
-	@DisplayName("positive test update status")
-	void testUpdateStatusPositive() throws Exception {
-//		financeVerificationOfficer.setFinOfficerName("saish");
-//		when(financeVerificationRepository.findById(null)).thenReturn(Optional.of(FinanceVerificationOfficer));
-//		when(finaceVerificationService.updateStatus(loan)).thenReturn(loan);
-//		assertEquals(loan, finaceVerificationService.updateStatus(loan));
-//		verify(financeVerificationService).updateStatus(loan);
-//
-	}
-
-	@Test
-	@DisplayName("negative test update status")
-	void testUpdateStatusNegative() throws Exception {
-//		financeVerificationOfficer.setFinOfficerName("saish");
-//		when(financeVerificationRepository.findById(null)).thenReturn(Optional.of(FinanceVerificationOfficer));
-//		when(finaceVerificationService.updateStatus(loan)).thenReturn(loan);
-//		assertEquals(loan, finaceVerificationService.updateStatus(loan));
-//		verify(financeVerificationService).updateStatus(loan);
-//
-	}
-	
-	@Test
-	@DisplayName("Positive Test case for Validate FinanceVerificationOfficer")
-	public void testValidAdminPositive() {
+	@DisplayName("Test case for Validate FinanceVerificationOfficer with correct details")
+	void testValidAdminPositive() {
 		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
 		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "12345");
 		assertEquals(val, true);
 	}
 
 	@Test
-	@DisplayName("Negative Test case for Validate FinanceVerificationOfficers")
-	public void testValidAdminNegative() {
+	@DisplayName("Test case for Validate FinanceVerificationOfficers with wrong details")
+	void testValidAdminNegative() {
 		when(financeVerificationRepository.findByUsernameAndPassword("aman@123", "12345")).thenReturn(financeVerificationOfficer);
-		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "12345");
-		assertNotEquals(val, false);
+		boolean val = finaceVerificationService.isValidFinanceOfficer("aman@123", "123");
+		assertNotEquals(val, true);
 	}
 }

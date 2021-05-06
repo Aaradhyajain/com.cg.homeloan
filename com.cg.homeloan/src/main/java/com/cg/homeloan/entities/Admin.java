@@ -17,8 +17,8 @@ public class Admin extends User {
 		super();
 	}
 
-	public Admin(String adminContact,String adminName,String password,int userId, String username) {
-		super(userId,username,password);
+	public Admin(String adminContact,String adminName,String password,int userId, String userName) {
+		super(userId,userName,password);
 		this.adminName = adminName;
 		this.adminContact = adminContact;
 	}
