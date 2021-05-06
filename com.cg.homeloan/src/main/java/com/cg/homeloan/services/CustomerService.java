@@ -53,7 +53,7 @@ public class CustomerService implements ICustomerService {
 	 * it checks whether the customer's credential is valid or not
 	 * it returns true or false
 	 */
-	public boolean isValidCustomer(String username, String password) {
-		return iCustomerRepository.findByUsernameAndPassword(username, password)!=null? true :false;
+	public boolean isValidCustomer(String userName, String password) {
+		return iCustomerRepository.findByUserNameAndPassword(userName, password)!=null? true :false;
 	}
 }

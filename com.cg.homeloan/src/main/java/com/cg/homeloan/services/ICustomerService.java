@@ -11,5 +11,5 @@ public interface ICustomerService {
 	public Customer deleteCustomer(int userId) throws CustomerNotFoundException;
 	public Customer getCustomer(int userId) throws CustomerNotFoundException;
 	public List<Customer> getAllCustomers();
-	public boolean isValidCustomer(String username, String password);
+	public boolean isValidCustomer(String userName, String password);
 }

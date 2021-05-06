@@ -22,8 +22,8 @@ public class FinanceVerificationService implements IFinanceVerificationService {
 	 * it returns true or false
 	 */
 	@Override
-	public Boolean isValidFinanceOfficer(String username, String password) {
-		return iFinanceVerificationRepository.findByUsernameAndPassword(username, password)!=null;
+	public Boolean isValidFinanceOfficer(String userName, String password) {
+		return iFinanceVerificationRepository.findByUserNameAndPassword(userName, password)!=null;
 	}
 	
 }

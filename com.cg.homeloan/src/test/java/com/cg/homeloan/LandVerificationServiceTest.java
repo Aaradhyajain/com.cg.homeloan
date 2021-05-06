@@ -34,7 +34,7 @@ class LandVerificationServiceTest {
 	@Test
 	@DisplayName("Test case for Validate LandVerificationOfficer with correct details")
 	void testValidAdminPositive() {
-		when(landVerifiactionRepository.findByUsernameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
+		when(landVerifiactionRepository.findByUserNameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
 		boolean val = landVerificationService.isValidLandOfficer("sonu@123", "1234");
 		assertEquals(val, true);
 	}
@@ -42,7 +42,7 @@ class LandVerificationServiceTest {
 	@Test
 	@DisplayName("Test case for Validate LandVerificationOfficer wrong details")
 	void testValidAdminNegative() {
-		when(landVerifiactionRepository.findByUsernameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
+		when(landVerifiactionRepository.findByUserNameAndPassword("sonu@123", "1234")).thenReturn(landVerificationOfficer);
 		boolean val = landVerificationService.isValidLandOfficer("sonu@123", "12345");
 		assertNotEquals(val, true);
 	}

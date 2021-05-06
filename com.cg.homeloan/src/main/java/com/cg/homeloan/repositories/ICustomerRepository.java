@@ -6,5 +6,5 @@ import com.cg.homeloan.entities.Customer;
 
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
-	public Customer findByUsernameAndPassword(String username, String password);
+	public Customer findByUserNameAndPassword(String userName, String password);
 }
