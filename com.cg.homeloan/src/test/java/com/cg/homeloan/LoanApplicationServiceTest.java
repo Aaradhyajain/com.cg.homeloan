@@ -57,7 +57,7 @@ class LoanApplicationServiceTest {
 		customer.setNationality("Indian");
 		customer.setPanNumber("213BP2P");
 		customer.setAadharNumber("528545691236");
-		customer.setUserName("Sita");
+		customer.setUsername("Sita");
 		customer.setPassword("1234");
 		
 		loanApplication = new LoanApplication(customer,5000000,10);
@@ -73,7 +73,7 @@ class LoanApplicationServiceTest {
 		customer1.setNationality("Indian");
 		customer1.setPanNumber("213BP2P");
 		customer1.setAadharNumber("528545691236");
-		customer1.setUserName("Sita");
+		customer1.setUsername("Sita");
 		customer1.setPassword("1234");
 		
 		loanApplication1 = new LoanApplication(customer1,100000,10);

@@ -74,7 +74,7 @@ public class LoanApplicationService implements ILoanApplicationService {
 	
 	//This is for track any application if it's status is approved
 	@Override
-	public LoanAgreement checkStatus(int loanApplicationId) throws LoanAgreementNotFoundException {
+	public LoanAgreement getLoanAgreement(int loanApplicationId) throws LoanAgreementNotFoundException {
 		return loanAgreementService.getLoanAgreement(loanApplicationId);
 	}
 	

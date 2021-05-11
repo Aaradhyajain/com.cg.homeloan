@@ -22,7 +22,7 @@ public interface ILoanApplicationService  {
 	public LoanApplication updateLandStatus(int loanApplicationId) throws LandVerificationException,LoanApplicationNotFoundException;
 	public LoanApplication updateFinanceStatus(int loanApplicationId) throws FinanceVerificationException, LoanApplicationNotFoundException;
 	public LoanApplication updateAdminStatus(int loanApplicationId) throws AdminApprovalException, LoanApplicationNotFoundException;
-	public LoanAgreement checkStatus(int loanApplicationId)throws LoanAgreementNotFoundException;
+	public LoanAgreement getLoanAgreement(int loanApplicationId)throws LoanAgreementNotFoundException;
 	
 
 }

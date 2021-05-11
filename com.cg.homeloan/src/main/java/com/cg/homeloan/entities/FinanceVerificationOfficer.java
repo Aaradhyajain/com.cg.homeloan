@@ -17,8 +17,8 @@ public class FinanceVerificationOfficer extends User {
 		super();
 	}
 
-	public FinanceVerificationOfficer(int userId,String userName,String password, String finOfficerName, String finOfficerContact) {
-		super(userId, userName,password);
+	public FinanceVerificationOfficer(int userId,String username,String password, String finOfficerName, String finOfficerContact) {
+		super(userId, username,password);
 		this.finOfficerName = finOfficerName;
 		this.finOfficerContact = finOfficerContact;
 	}

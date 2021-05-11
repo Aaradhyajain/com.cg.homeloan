@@ -17,8 +17,8 @@ public class LandVerificationOfficer extends User {
 		super();
 	}
 
-	public LandVerificationOfficer(int userId,String userName,String password, String officerName, String officerContact) {
-		super(userId,userName,password);
+	public LandVerificationOfficer(int userId,String username,String password, String officerName, String officerContact) {
+		super(userId,username,password);
 		this.officerName = officerName;
 		this.officerContact = officerContact;
 	}
