@@ -5,6 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +26,14 @@ import com.cg.homeloan.entities.FinanceVerificationOfficer;
 import com.cg.homeloan.entities.LandVerificationOfficer;
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.entities.ResponseToken;
+import com.cg.homeloan.entities.User;
 import com.cg.homeloan.exceptions.AdminApprovalException;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
+import com.cg.homeloan.jwtsecurity.helper.JwtUtils;
+import com.cg.homeloan.repositories.IAdminRepository;
 import com.cg.homeloan.services.CustomerService;
 import com.cg.homeloan.services.IAdminService;
 import com.cg.homeloan.services.IFinanceVerificationService;
@@ -41,6 +50,9 @@ public class AdminController {
 	IAdminService adminService;
 	
 	@Autowired
+	private IAdminRepository iAdminRepository;
+	
+	@Autowired
 	CustomerService customerService;
 	
 	@Autowired
@@ -54,6 +66,14 @@ public class AdminController {
 	
 	@Autowired
 	LoanAgreementService loanAgreementService;
+	
+	
+	//use for jwt
+	@Autowired
+	private AuthenticationManager authenticationManager;
+				
+	@Autowired
+	private JwtUtils jwtutil;
 	
 	@PostMapping("/addAdmin")
 	public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin) {
@@ -130,6 +150,36 @@ public class AdminController {
 	@DeleteMapping("/deleteLoanAgreement/{loanAgreementId}")
 	public ResponseEntity<LoanAgreement> deleteLoanAgreement(@PathVariable int loanAgreementId) throws LoanAgreementNotFoundException {
 		return new ResponseEntity<>(loanAgreementService.deleteLoanAgreement(loanAgreementId), HttpStatus.OK);
+	}
+	
+	
+	//JWT Methods
+	//This method is used for Login and its sends token as a response
+	@PostMapping("/login")
+	public ResponseEntity<?> authenticateUser(@Validated @RequestBody User loginRequest) {
+		 
+		Boolean validate =iAdminRepository.findByUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword())!=null? true :false; 
+			 
+		if(validate){
+			Authentication authentication = authenticationManager.authenticate(
+	        new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+		 
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		 
+			String jwt = jwtutil.generateJwtToken(authentication);
+				
+			return ResponseEntity.ok(new ResponseToken(jwt));
+		}
+		else {
+				return ResponseEntity.ok("User Not Found!!!");
+		}
+
+	}
+		
+	//Validate the User
+	@PostMapping("/validatingAdmin")
+	public ResponseEntity<?> isValidAdmin(@Validated @RequestBody User validRequest){
+		return ResponseEntity.ok(""+adminService.isValidAdmin(validRequest.getUsername(), validRequest.getPassword()));
 	}
 	
 }
