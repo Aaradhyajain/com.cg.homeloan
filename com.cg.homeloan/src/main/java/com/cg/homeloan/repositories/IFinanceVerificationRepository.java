@@ -7,5 +7,5 @@ import com.cg.homeloan.entities.FinanceVerificationOfficer;
 public interface IFinanceVerificationRepository extends JpaRepository<FinanceVerificationOfficer, Integer>{
 
 
-	public FinanceVerificationOfficer findByUserNameAndPassword(String userName, String password);
+	public FinanceVerificationOfficer findByUsernameAndPassword(String username, String password);
 }

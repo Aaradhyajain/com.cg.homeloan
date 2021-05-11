@@ -31,17 +31,17 @@ class AdminServiceTest {
 		admin.setAdminName("asddf");
 		admin.setAdminContact("554");
 		admin.setPassword("Saishf@");
-		admin.setUserName("om");
+		admin.setUsername("om");
 		
 		admin1.setAdminName("asd");
 		admin1.setAdminContact("s7");
 		admin1.setPassword("jshs@1");
-		admin1.setUserName("bcx");
+		admin1.setUsername("bcx");
 		
 		admin2.setAdminName("qwe");
 		admin2.setAdminContact("tyu");
 		admin2.setPassword("uio@1");
-		admin2.setUserName("mjk");
+		admin2.setUsername("mjk");
 	}
 
 	@Autowired
@@ -109,7 +109,7 @@ class AdminServiceTest {
 	@DisplayName("Positive Test case for Validate Admin")
 	public void testValidAdminPositive() {
 		Admin expected = new Admin("1234567890", "admin", "12345", 1, "admin@123");
-		when(adminRepository.findByUserNameAndPassword("admin@123", "12345")).thenReturn(expected);
+		when(adminRepository.findByUsernameAndPassword("admin@123", "12345")).thenReturn(expected);
 		boolean val = adminService.isValidAdmin("admin@123", "12345");
 		assertEquals(val, true);
 	}
@@ -118,7 +118,7 @@ class AdminServiceTest {
 	@DisplayName("Negative Test case for Validate Admin")
 	public void testValidAdminNegative() {
 		Admin expected = new Admin("1234567890", "admin", "12345", 1, "admin@123");
-		when(adminRepository.findByUserNameAndPassword("admin@123", "12345")).thenReturn(expected);
+		when(adminRepository.findByUsernameAndPassword("admin@123", "12345")).thenReturn(expected);
 		boolean val = adminService.isValidAdmin("admin@123", "1234");
 		assertNotEquals(val, true);
 	}

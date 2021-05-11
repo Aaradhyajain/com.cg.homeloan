@@ -31,9 +31,9 @@ public class Customer extends User{
 		super();
 	}
 
-	public Customer(int userId,String userName, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
+	public Customer(int userId,String username, String password, String customerName, String mobileNumber, String emailId, LocalDate dateOfBirth,
 			String gender, String nationality, String aadharNumber, String panNumber) {
-		super(userId,userName,password);
+		super(userId,username,password);
 		
 		this.customerName = customerName;
 		this.mobileNumber = mobileNumber;
@@ -115,7 +115,7 @@ public class Customer extends User{
 		return "Customer [customerName=" + customerName + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
 				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", nationality=" + nationality
 				+ ", aadharNumber=" + aadharNumber + ", panNumber=" + panNumber + ", userId=" + getUserId()
-				+ ", username=" + getUserName() + ", password=" + getPassword() + "]";
+				+ ", username=" + getUsername() + ", password=" + getPassword() + "]";
 	}
 
 	

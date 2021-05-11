@@ -17,7 +17,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	@Column(unique = true)
-	private String userName;
+	private String username;
 	@Column
 	private String password;
 	
@@ -28,14 +28,14 @@ public class User {
 	
 	public User(String username, String password) {
 		super();
-		this.userName = username;
+		this.username = username;
 		this.password = password;
 	}
 
-	public User(int userId, String userName, String password) {
+	public User(int userId, String username, String password) {
 		super();
 		this.userId = userId;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 	}
 
@@ -47,12 +47,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -65,7 +65,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + "]";
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + "]";
 	}
 
 }

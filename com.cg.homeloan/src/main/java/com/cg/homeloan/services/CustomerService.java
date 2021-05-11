@@ -21,6 +21,13 @@ public class CustomerService implements ICustomerService {
 		iCustomerRepository.save(customer);
 		return customer;
 	}
+	
+   //	get userId by userName
+	@Override
+	public int getUserIdByUsername(String username) throws CustomerNotFoundException {
+		int userId = iCustomerRepository.findByUsername(username).getUserId();
+		return userId;
+	}
 
   // getting a specific record by using the method findById() of CrudRepository
 	@Override
@@ -41,7 +48,7 @@ public class CustomerService implements ICustomerService {
 		return iCustomerRepository.save(customer);
 	}
 	
-	// remove a specific customer bt using specific userId of the customer
+	// remove a specific customer but using specific userId of the customer
 	@Override
 	public Customer deleteCustomer(int userId) throws CustomerNotFoundException {
 		Customer customer = getCustomer(userId);
@@ -53,7 +60,7 @@ public class CustomerService implements ICustomerService {
 	 * it checks whether the customer's credential is valid or not
 	 * it returns true or false
 	 */
-	public boolean isValidCustomer(String userName, String password) {
-		return iCustomerRepository.findByUserNameAndPassword(userName, password)!=null? true :false;
+	public boolean isValidCustomer(String username, String password) {
+		return iCustomerRepository.findByUsernameAndPassword(username, password)!=null? true :false;
 	}
 }

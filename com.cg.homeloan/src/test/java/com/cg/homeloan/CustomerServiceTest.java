@@ -34,7 +34,7 @@ class CustomerServiceTest {
 		customer.setNationality("Indian");
 		customer.setPanNumber("213BP2P");
 		customer.setAadharNumber("528545691236");
-		customer.setUserName("Sita");
+		customer.setUsername("Sita");
 		customer.setPassword("1234");
 		
 		customer1 = new Customer();
@@ -47,7 +47,7 @@ class CustomerServiceTest {
 		customer1.setNationality("Indian");
 		customer1.setPanNumber("213BP2P");
 		customer1.setAadharNumber("528545691236");
-		customer1.setUserName("Sita");
+		customer1.setUsername("Sita");
 		customer1.setPassword("1234");
 	}
 
@@ -110,7 +110,7 @@ class CustomerServiceTest {
 	@Test
 	@DisplayName("Test case for Validate valid Customer")
 	public void testValidAdminPositive() {
-		when(customerRepository.findByUserNameAndPassword("sita", "1234")).thenReturn(customer);
+		when(customerRepository.findByUsernameAndPassword("sita", "1234")).thenReturn(customer);
 		boolean val = customerService.isValidCustomer("sita", "1234");
 		assertEquals(val, true);
 	}
@@ -118,7 +118,7 @@ class CustomerServiceTest {
 	@Test
 	@DisplayName("Test case for Validate invalid Customer")
 	public void testValidAdminNegative() {
-		when(customerRepository.findByUserNameAndPassword("sita", "1234")).thenReturn(customer);
+		when(customerRepository.findByUsernameAndPassword("sita", "1234")).thenReturn(customer);
 		boolean val = customerService.isValidCustomer("sita", "12345");
 		assertNotEquals(val, true);
 	}

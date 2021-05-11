@@ -6,7 +6,7 @@ import com.cg.homeloan.entities.LandVerificationOfficer;
 
 public interface ILandVerificationRepository extends JpaRepository<LandVerificationOfficer, Integer> {
 
-	public LandVerificationOfficer findByUserNameAndPassword(String userName, String password);
+	public LandVerificationOfficer findByUsernameAndPassword(String username, String password);
 
 }
 
