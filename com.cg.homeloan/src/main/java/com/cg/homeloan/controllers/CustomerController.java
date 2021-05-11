@@ -3,6 +3,11 @@ package com.cg.homeloan.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cg.homeloan.entities.Customer;
 import com.cg.homeloan.entities.LoanAgreement;
 import com.cg.homeloan.entities.LoanApplication;
+import com.cg.homeloan.entities.ResponseToken;
 import com.cg.homeloan.entities.Status;
+import com.cg.homeloan.entities.User;
 import com.cg.homeloan.exceptions.CustomerNotFoundException;
 import com.cg.homeloan.exceptions.LoanAgreementNotFoundException;
 import com.cg.homeloan.exceptions.LoanApplicationNotFoundException;
+import com.cg.homeloan.jwtsecurity.helper.JwtUtils;
+import com.cg.homeloan.repositories.ICustomerRepository;
 import com.cg.homeloan.services.CustomerService;
 import com.cg.homeloan.services.IEmiService;
 import com.cg.homeloan.services.ILoanApplicationService;
@@ -31,6 +40,9 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@Autowired
+	ICustomerRepository iCustomerRepository;
+	
+	@Autowired
 	ILoanApplicationService loanapplicationservice;
 	
 	@Autowired
@@ -38,6 +50,15 @@ public class CustomerController {
 	
 	boolean isLoggedIn = false;
 	
+	
+	//use for jwt
+	@Autowired
+	private AuthenticationManager authenticationManager;
+		
+		
+	@Autowired
+	private JwtUtils jwtutil;
+		
 	@PostMapping("/addCustomer")
 	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
 		return new ResponseEntity<>(customerService.addCustomer(customer),HttpStatus.OK);
@@ -87,5 +108,38 @@ public class CustomerController {
 		}else
 			return false; 
 	}
+	
+	
+	//JWT
+	//this method is used for login it will return token and generate token and send token as a response
+	@PostMapping("/login")
+	public ResponseEntity<?> authenticateUser(@Validated @RequestBody User loginRequest) {
+		 
+		Boolean validate =iCustomerRepository.findByUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword())!=null? true :false; 
+			 
+		System.out.println(loginRequest);
+		if(validate){
+			Authentication authentication = authenticationManager.authenticate(
+	        new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+		 
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		 
+			String jwt = jwtutil.generateJwtToken(authentication);
+				
+			return ResponseEntity.ok(new ResponseToken(jwt));
+		}
+		else {
+			return ResponseEntity.ok("User Not Found!!!");
+		}
+
+	  }
+		
+	//	this method is used to check the user is valid of not
+	//Validation the User
+	@PostMapping("/validatingCustomer")
+	public ResponseEntity<?> isValidCustomer(@Validated @RequestBody User validRequest){
+		return ResponseEntity.ok(""+customerService.isValidCustomer(validRequest.getUsername(), validRequest.getPassword()));
+	}
+
 
 }
